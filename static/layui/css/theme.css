@@ -1,0 +1,463 @@
+/** .theme-default  */
+.theme-default .layui-side-menu,
+.theme-default .layadmin-pagetabs .layui-tab-title li:after,
+.theme-default .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-default .layui-layer-admin .layui-layer-title,
+.theme-default .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #20222A !important;
+}
+
+.theme-default .layui-nav-tree .layui-this,
+.theme-default .layui-nav-tree .layui-this>a,
+.theme-default .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-default .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #009688 !important;
+}
+
+.theme-default .layui-layout-admin .layui-logo {
+    background-color: #20222A !important;
+}
+
+
+/** theme-dark-blue */
+.theme-dark-blue .layui-side-menu,
+.theme-dark-blue .layadmin-pagetabs .layui-tab-title li:after,
+.theme-dark-blue .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-dark-blue .layui-layer-admin .layui-layer-title,
+.theme-dark-blue .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #03152A !important;
+}
+
+.theme-dark-blue .layui-nav-tree .layui-nav-bar,
+.theme-dark-blue .layui-nav-tree .layui-this,
+.theme-dark-blue .layui-nav-tree .layui-this>a,
+.theme-dark-blue .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-dark-blue .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #3B91FF !important;
+}
+
+.theme-dark-blue .layui-layout-admin .layui-logo {
+    background-color: #03152A !important;
+}
+
+
+/** theme-coffee */
+.theme-coffee .layui-side-menu,
+.theme-coffee .layadmin-pagetabs .layui-tab-title li:after,
+.theme-coffee .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-coffee .layui-layer-admin .layui-layer-title,
+.theme-coffee .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #2E241B !important;
+}
+
+.theme-coffee .layui-nav-tree .layui-nav-bar,
+.theme-coffee .layui-nav-tree .layui-this,
+.theme-coffee .layui-nav-tree .layui-this>a,
+.theme-coffee .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-coffee .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #A48566 !important;
+}
+
+.theme-coffee .layui-layout-admin .layui-logo {
+    background-color: #2E241B !important;
+}
+
+
+/** theme-purple-red */
+.theme-purple-red .layui-side-menu,
+.theme-purple-red .layadmin-pagetabs .layui-tab-title li:after,
+.theme-purple-red .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-purple-red .layui-layer-admin .layui-layer-title,
+.theme-purple-red .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #50314F !important;
+}
+
+.theme-purple-red .layui-nav-tree .layui-nav-bar,
+.theme-purple-red .layui-nav-tree .layui-this,
+.theme-purple-red .layui-nav-tree .layui-this>a,
+.theme-purple-red .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-purple-red .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #7A4D7B !important;
+}
+
+.theme-purple-red .layui-layout-admin .layui-logo {
+    background-color: #50314F !important;
+}
+
+
+/** theme-ocean */
+.theme-ocean .layui-side-menu,
+.theme-ocean .layadmin-pagetabs .layui-tab-title li:after,
+.theme-ocean .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-ocean .layui-layer-admin .layui-layer-title,
+.theme-ocean .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #344058 !important;
+}
+
+.theme-ocean .layui-nav-tree .layui-nav-bar,
+.theme-ocean .layui-nav-tree .layui-this,
+.theme-ocean .layui-nav-tree .layui-this>a,
+.theme-ocean .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-ocean .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #1E9FFF !important;
+}
+
+.theme-ocean .layui-layout-admin .layui-logo {
+    background-color: #1E9FFF !important;
+}
+
+
+/** theme-green */
+.theme-green .layui-side-menu,
+.theme-green .layadmin-pagetabs .layui-tab-title li:after,
+.theme-green .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-green .layui-layer-admin .layui-layer-title,
+.theme-green .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #3A3D49 !important;
+}
+
+.theme-green .layui-nav-tree .layui-nav-bar,
+.theme-green .layui-nav-tree .layui-this,
+.theme-green .layui-nav-tree .layui-this>a,
+.theme-green .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-green .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #5FB878 !important;
+}
+
+.theme-green .layui-layout-admin .layui-logo {
+    background-color: #2F9688 !important;
+}
+
+
+/** theme-red */
+.theme-red .layui-side-menu,
+.theme-red .layadmin-pagetabs .layui-tab-title li:after,
+.theme-red .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-red .layui-layer-admin .layui-layer-title,
+.theme-red .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #20222A !important;
+}
+
+.theme-red .layui-nav-tree .layui-nav-bar,
+.theme-red .layui-nav-tree .layui-this,
+.theme-red .layui-nav-tree .layui-this>a,
+.theme-red .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-red .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #F78400 !important;
+}
+
+.theme-red .layui-layout-admin .layui-logo {
+    background-color: #F78400 !important;
+}
+
+
+/** theme-fashion-red */
+.theme-fashion-red .layui-side-menu,
+.theme-fashion-red .layadmin-pagetabs .layui-tab-title li:after,
+.theme-fashion-red .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-fashion-red .layui-layer-admin .layui-layer-title,
+.theme-fashion-red .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #28333E !important;
+}
+
+.theme-fashion-red .layui-nav-tree .layui-nav-bar,
+.theme-fashion-red .layui-nav-tree .layui-this,
+.theme-fashion-red .layui-nav-tree .layui-this>a,
+.theme-fashion-red .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-fashion-red .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #AA3130 !important;
+}
+
+.theme-fashion-red .layui-layout-admin .layui-logo {
+    background-color: #AA3130 !important;
+}
+
+
+/** theme-classic-black */
+.theme-classic-black .layui-side-menu,
+.theme-classic-black .layadmin-pagetabs .layui-tab-title li:after,
+.theme-classic-black .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-classic-black .layui-layer-admin .layui-layer-title,
+.theme-classic-black .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #24262F !important;
+}
+
+.theme-classic-black .layui-nav-tree .layui-nav-bar,
+.theme-classic-black .layui-nav-tree .layui-this,
+.theme-classic-black .layui-nav-tree .layui-this>a,
+.theme-classic-black .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-classic-black .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #009688 !important;
+}
+
+.theme-classic-black .layui-layout-admin .layui-logo {
+    background-color: #3A3D49 !important;
+}
+
+
+/** theme-green-header */
+.theme-green-header .layui-side-menu,
+.theme-green-header .layadmin-pagetabs .layui-tab-title li:after,
+.theme-green-header .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-green-header .layui-layer-admin .layui-layer-title,
+.theme-green-header .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: undefined !important;
+}
+
+.theme-green-header .layui-nav-tree .layui-this,
+.theme-green-header .layui-nav-tree .layui-this>a,
+.theme-green-header .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-green-header .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: undefined !important;
+}
+
+.theme-green-header .layui-layout-admin .layui-logo {
+    background-color: #226A62 !important;
+}
+
+.theme-green-header .layui-layout-admin .layui-header {
+    background-color: #2F9688;
+}
+
+.theme-green-header .layui-layout-admin .layui-header a,
+.theme-green-header .layui-layout-admin .layui-header a cite {
+    color: #f8f8f8;
+}
+
+.theme-green-header .layui-layout-admin .layui-header a:hover {
+    color: #fff;
+}
+
+.theme-green-header .layui-layout-admin .layui-header .layui-nav .layui-nav-more {
+    border-top-color: #fbfbfb;
+}
+
+.theme-green-header .layui-layout-admin .layui-header .layui-nav .layui-nav-mored {
+    border-color: transparent;
+    border-bottom-color: #fbfbfb;
+}
+
+.theme-green-header .layui-layout-admin .layui-header .layui-nav .layui-this:after,
+.theme-green-header .layui-layout-admin .layui-header .layui-nav-bar {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.theme-green-header .layadmin-pagetabs .layui-tab-title li:after {
+    display: none;
+}
+
+
+/** theme-ocean-header */
+.theme-ocean-header .layui-side-menu,
+.theme-ocean-header .layadmin-pagetabs .layui-tab-title li:after,
+.theme-ocean-header .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-ocean-header .layui-layer-admin .layui-layer-title,
+.theme-ocean-header .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #344058 !important;
+}
+
+.theme-ocean-header .layui-nav-tree .layui-nav-bar,
+.theme-ocean-header .layui-nav-tree .layui-this,
+.theme-ocean-header .layui-nav-tree .layui-this>a,
+.theme-ocean-header .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-ocean-header .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #1E9FFF !important;
+}
+
+.theme-ocean-header .layui-layout-admin .layui-logo {
+    background-color: #0085E8 !important;
+}
+
+.theme-ocean-header .layui-layout-admin .layui-header {
+    background-color: #1E9FFF;
+}
+
+.theme-ocean-header .layui-layout-admin .layui-header a,
+.theme-ocean-header .layui-layout-admin .layui-header a cite {
+    color: #f8f8f8;
+}
+
+.theme-ocean-header .layui-layout-admin .layui-header a:hover {
+    color: #fff;
+}
+
+.theme-ocean-header .layui-layout-admin .layui-header .layui-nav .layui-nav-more {
+    border-top-color: #fbfbfb;
+}
+
+.theme-ocean-header .layui-layout-admin .layui-header .layui-nav .layui-nav-mored {
+    border-color: transparent;
+    border-bottom-color: #fbfbfb;
+}
+
+.theme-ocean-header .layui-layout-admin .layui-header .layui-nav .layui-this:after,
+.theme-ocean-header .layui-layout-admin .layui-header .layui-nav-bar {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.theme-ocean-header .layadmin-pagetabs .layui-tab-title li:after {
+    display: none;
+}
+
+
+/** classic-black-header */
+.classic-black-header .layui-side-menu,
+.classic-black-header .layadmin-pagetabs .layui-tab-title li:after,
+.classic-black-header .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.classic-black-header .layui-layer-admin .layui-layer-title,
+.classic-black-header .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: undefined !important;
+}
+
+.classic-black-header .layui-nav-tree .layui-this,
+.classic-black-header .layui-nav-tree .layui-this>a,
+.classic-black-header .layui-nav-tree .layui-nav-child dd.layui-this,
+.classic-black-header .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: undefined !important;
+}
+
+.classic-black-header .layui-layout-admin .layui-logo {
+    background-color: undefined !important;
+}
+
+.classic-black-header .layui-layout-admin .layui-header {
+    background-color: #393D49;
+}
+
+.classic-black-header .layui-layout-admin .layui-header a,
+.classic-black-header .layui-layout-admin .layui-header a cite {
+    color: #f8f8f8;
+}
+
+.classic-black-header .layui-layout-admin .layui-header a:hover {
+    color: #fff;
+}
+
+.classic-black-header .layui-layout-admin .layui-header .layui-nav .layui-nav-more {
+    border-top-color: #fbfbfb;
+}
+
+.classic-black-header .layui-layout-admin .layui-header .layui-nav .layui-nav-mored {
+    border-color: transparent;
+    border-bottom-color: #fbfbfb;
+}
+
+.classic-black-header .layui-layout-admin .layui-header .layui-nav .layui-this:after,
+.classic-black-header .layui-layout-admin .layui-header .layui-nav-bar {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.classic-black-header .layadmin-pagetabs .layui-tab-title li:after {
+    display: none;
+}
+
+
+/** theme-purple-red-header */
+.theme-purple-red-header .layui-side-menu,
+.theme-purple-red-header .layadmin-pagetabs .layui-tab-title li:after,
+.theme-purple-red-header .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-purple-red-header .layui-layer-admin .layui-layer-title,
+.theme-purple-red-header .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #50314F !important;
+}
+
+.theme-purple-red-header .layui-nav-tree .layui-nav-bar,
+.theme-purple-red-header .layui-nav-tree .layui-this,
+.theme-purple-red-header .layui-nav-tree .layui-this>a,
+.theme-purple-red-header .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-purple-red-header .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #7A4D7B !important;
+}
+
+.theme-purple-red-header .layui-layout-admin .layui-logo {
+    background-color: #50314F !important;
+}
+
+.theme-purple-red-header .layui-layout-admin .layui-header {
+    background-color: #50314F;
+}
+
+.theme-purple-red-header .layui-layout-admin .layui-header a,
+.theme-purple-red-header .layui-layout-admin .layui-header a cite {
+    color: #f8f8f8;
+}
+
+.theme-purple-red-header .layui-layout-admin .layui-header a:hover {
+    color: #fff;
+}
+
+.theme-purple-red-header .layui-layout-admin .layui-header .layui-nav .layui-nav-more {
+    border-top-color: #fbfbfb;
+}
+
+.theme-purple-red-header .layui-layout-admin .layui-header .layui-nav .layui-nav-mored {
+    border-color: transparent;
+    border-bottom-color: #fbfbfb;
+}
+
+.theme-purple-red-header .layui-layout-admin .layui-header .layui-nav .layui-this:after,
+.theme-purple-red-header .layui-layout-admin .layui-header .layui-nav-bar {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.theme-purple-red-header .layadmin-pagetabs .layui-tab-title li:after {
+    display: none;
+}
+
+
+/** theme-fashion-red-header */
+.theme-fashion-red-header .layui-side-menu,
+.theme-fashion-red-header .layadmin-pagetabs .layui-tab-title li:after,
+.theme-fashion-red-header .layadmin-pagetabs .layui-tab-title li.layui-this:after,
+.theme-fashion-red-header .layui-layer-admin .layui-layer-title,
+.theme-fashion-red-header .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #28333E !important;
+}
+
+.theme-fashion-red-header .layui-nav-tree .layui-nav-bar,
+.theme-fashion-red-header .layui-nav-tree .layui-this,
+.theme-fashion-red-header .layui-nav-tree .layui-this>a,
+.theme-fashion-red-header .layui-nav-tree .layui-nav-child dd.layui-this,
+.theme-fashion-red-header .layui-nav-tree .layui-nav-child dd.layui-this a {
+    background-color: #AA3130 !important;
+}
+
+.theme-fashion-red-header .layui-layout-admin .layui-logo {
+    background-color: #28333E !important;
+}
+
+.theme-fashion-red-header .layui-layout-admin .layui-header {
+    background-color: #AA3130;
+}
+
+.theme-fashion-red-header .layui-layout-admin .layui-header a,
+.theme-fashion-red-header .layui-layout-admin .layui-header a cite {
+    color: #f8f8f8;
+}
+
+.theme-fashion-red-header .layui-layout-admin .layui-header a:hover {
+    color: #fff;
+}
+
+.theme-fashion-red-header .layui-layout-admin .layui-header .layui-nav .layui-nav-more {
+    border-top-color: #fbfbfb;
+}
+
+.theme-fashion-red-header .layui-layout-admin .layui-header .layui-nav .layui-nav-mored {
+    border-color: transparent;
+    border-bottom-color: #fbfbfb;
+}
+
+.theme-fashion-red-header .layui-layout-admin .layui-header .layui-nav .layui-this:after,
+.theme-fashion-red-header .layui-layout-admin .layui-header .layui-nav-bar {
+    background-color: #fff;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.theme-fashion-red-header .layadmin-pagetabs .layui-tab-title li:after {
+    display: none;
+}

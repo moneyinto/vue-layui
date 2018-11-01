@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import Theme from '@/data/theme';
 
 Vue.use(Vuex);
 
@@ -7,7 +8,8 @@ const Store = new Vuex.Store({
     state: {
         isCloseSlider: false,
         isFullScreen: false,
-        userInfo: null
+        userInfo: null,
+        theme: JSON.parse(localStorage.VUE_LAYUI_ADMIN_THEME || JSON.stringify(Theme[0]))
     },
     actions: {
 
@@ -46,8 +48,15 @@ const Store = new Vuex.Store({
         },
 
         // 更新用户信息
-        updateUserInfo(state) {
-            state.userinfo = JSON.parse(localStorage.VUE_LAYUI_ADMIN_USERINFO);
+        updateUserInfo(state, userInfo) {
+            localStorage.VUE_LAYUI_ADMIN_USERINFO = JSON.stringify(userInfo);
+            state.userInfo = userInfo;
+        },
+
+        // 切换主题
+        updateTheme(state, theme) {
+            localStorage.VUE_LAYUI_ADMIN_THEME = JSON.stringify(theme);
+            state.theme = theme;
         }
     }
 });

@@ -5,7 +5,7 @@
                 <span>Vue layuiAdmin</span>
             </div>
             <ul class="layui-nav layui-nav-tree" lay-shrink="all" id="LAY-system-side-menu" lay-filter="layadmin-system-side-menu">
-                <li data-name="" data-jump="" class="layui-nav-item">
+                <li data-name="" data-jump="" class="layui-nav-item layui-nav-itemed">
                     <a href="javascript:;" lay-tips="主页" lay-direction="2">
                         <i class="layui-icon layui-icon-home"></i>
                         <cite>主页</cite>
@@ -13,7 +13,7 @@
                     </a>
                     <dl class="layui-nav-child">
                         <dd data-name="" data-jump="/" class="">
-                            <a href="javascript:;" lay-href="/">控制台</a>
+                            <a href="javascript:;" lay-href="/" class="layui-this">控制台</a>
                         </dd>
                         <dd data-name="homepage1" data-jump="home/homepage1">
                             <a href="javascript:;" lay-href="home/homepage1">主页一</a>

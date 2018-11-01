@@ -40,7 +40,7 @@
             </li>
             <li class="layui-nav-item">
                 <a href="javascript:;">
-                    <cite>贤心</cite>
+                    <cite>{{$store.state.userInfo && $store.state.userInfo.name}}</cite>
                     <span class="layui-nav-more"></span>
                 </a>
                 <span class="layui-nav-bar"></span>

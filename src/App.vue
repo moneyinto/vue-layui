@@ -1,5 +1,5 @@
 <template>
-    <div id="app" layadmin-themealias="default" class="layui-layout-body">
+    <div id="app" :class="'theme-' + $store.state.theme.name" class="layui-layout-body">
         <div class="layadmin-tabspage-none" :class="isSMWidth ? ($store.state.isCloseSlider ? '': 'layadmin-side-spread-sm') : ($store.state.isCloseSlider ? 'layadmin-side-shrink': '')">
             <div class="layui-layout layui-layout-admin">
                 <Header></Header>
@@ -25,11 +25,7 @@
         },
 
         mounted() {
-            localStorage.VUE_LAYUI_ADMIN_USERINFO = JSON.stringify({
-                name: 'moneyinto'
-            });
-
-            this.$store.commit('updateUserInfo');
+            this.$store.commit('updateUserInfo', { name: 'moneyinto' });
 
             this.isSMWidth = window.innerWidth <= 992;
             this.isLGWidth = window.innerWidth > 992;
@@ -61,3 +57,4 @@
         }
     };
 </script>
+
