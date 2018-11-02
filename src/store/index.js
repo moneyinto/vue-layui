@@ -44,8 +44,17 @@ const Store = new Vuex.Store({
 
         // 全屏切换
         toggleFullScreen(state) {
-            state.isFullScreen = !state.isFullScreen;
             if (state.isFullScreen) {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.webkitCancelFullScreen) {
+                    document.webkitCancelFullScreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            } else {
                 let docElm = document.documentElement;
                 if (docElm.requestFullscreen) {
                     docElm.requestFullscreen();
@@ -56,17 +65,12 @@ const Store = new Vuex.Store({
                 } else if (docElm.msRequestFullscreen) {
                     docElm.msRequestFullscreen();
                 }
-            } else {
-                if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                } else if (document.mozCancelFullScreen) {
-                    document.mozCancelFullScreen();
-                } else if (document.webkitCancelFullScreen) {
-                    document.webkitCancelFullScreen();
-                } else if (document.msExitFullscreen) {
-                    document.msExitFullscreen();
-                }
             }
+        },
+
+        // 更新全屏状态信息
+        changeFullScreenState (state) {
+            state.isFullScreen = !state.isFullScreen;
         },
 
         // 更新用户信息
