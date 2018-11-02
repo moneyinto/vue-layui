@@ -17,7 +17,7 @@ export const appRouter = [
     {
         name: 'home',
         title: '首页',
-        icon: '',
+        icon: 'layui-icon-home',
         path: '/home',
         component: Home
     },
@@ -25,7 +25,7 @@ export const appRouter = [
     {
         name: 'component',
         title: '组件',
-        icon: '',
+        icon: 'layui-icon-component',
         path: '/component',
         children: [
             {

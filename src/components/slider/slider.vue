@@ -7,7 +7,7 @@
             <ul class="layui-nav layui-nav-tree">
                 <li class="layui-nav-item" v-for="(item, index) in menuList" :key="index" :class="{'layui-this': item.name === currentPageName, 'layui-nav-itemed': menuOpenIndex === index && item.children && item.children.length > 0 }">
                     <a href="javascript:;" @click="selectMenu(item, index)">
-                        <i class="layui-icon layui-icon-home"></i>
+                        <i class="layui-icon" :class="item.icon"></i>
                         <cite>{{item.title}}</cite>
                         <span class="layui-nav-more" v-if="item.children && item.children.length > 0"></span>
                     </a>
