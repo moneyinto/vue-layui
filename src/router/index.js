@@ -3,6 +3,8 @@ import Router from 'vue-router';
 import Main from '@/pages/Main';
 import Home from '@/pages/home/home';
 
+import Component from '@/pages/component/component';
+import Grid from '@/pages/component/grid/grid';
 import GridList from '@/pages/component/grid/grid-list';
 import GridMobile from '@/pages/component/grid/grid-mobile';
 
@@ -27,11 +29,15 @@ export const appRouter = [
         title: '组件',
         icon: 'layui-icon-component',
         path: '/component',
+        redirect: '/component/grid',
+        component: Component,
         children: [
             {
                 name: 'grid',
                 title: '栅格',
                 path: 'grid',
+                redirect: '/component/grid/list',
+                component: Grid,
                 children: [
                     {
                         name: 'gridList',
