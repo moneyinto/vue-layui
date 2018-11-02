@@ -66,6 +66,7 @@
                         this.$router.push({
                             name: menu.name
                         });
+                        this.$store.state.isCloseSlider = true;
                     } else {
                         this.menuOpenIndex = index;
                     }

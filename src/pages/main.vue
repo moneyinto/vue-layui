@@ -1,5 +1,5 @@
 <template>
-    <div class="layadmin-tabspage-none" :class="isSMWidth ? ($store.state.isCloseSlider ? '': 'layadmin-side-spread-sm') : ($store.state.isCloseSlider ? 'layadmin-side-shrink': '')">
+    <div class="layadmin-tabspage-none" :class="isSMWidth ? ($store.state.isCloseSlider ? '': 'layadmin-side-spread-sm') : ($store.state.isCloseSlider ? '': 'layadmin-side-shrink')">
             <div class="layui-layout layui-layout-admin">
                 <router-view></router-view>
                 <Header></Header>
@@ -47,7 +47,7 @@
             // 切换到lg尺寸时打开slider
             openSlider() {
                 if (this.isLGWidth) {
-                    this.$store.state.isCloseSlider = false;
+                    this.$store.state.isCloseSlider = true;
                 }
             }
         }
