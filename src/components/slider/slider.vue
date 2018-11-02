@@ -5,7 +5,7 @@
                 <span>Vue layuiAdmin</span>
             </div>
             <ul class="layui-nav layui-nav-tree">
-                <li class="layui-nav-item" v-for="(item, index) in menuList" :key="index" :class="{'layui-this': item.name === currentPageName, 'layui-nav-itemed': menuOpenIndex === index }">
+                <li class="layui-nav-item" v-for="(item, index) in menuList" :key="index" :class="{'layui-this': item.name === currentPageName, 'layui-nav-itemed': menuOpenIndex === index && item.children && item.children.length > 0 }">
                     <a href="javascript:;" @click="selectMenu(item, index)">
                         <i class="layui-icon layui-icon-home"></i>
                         <cite>{{item.title}}</cite>
@@ -43,6 +43,14 @@
             }
         },
 
+        created() {
+            for (let [index, item] of this.menuList.entries()) {
+                if (this.checkIsExist(item)) {
+                    this.menuOpenIndex = index;
+                }
+            }
+        },
+
         watch: {
             '$route' (to) {
                 this.currentPageName = to.name;
@@ -54,13 +62,24 @@
                 if (this.menuOpenIndex === index) {
                     this.menuOpenIndex = null;
                 } else {
-                    this.menuOpenIndex = index;
+                    if (!menu.children || menu.children.length === 0) {
+                        this.$router.push({
+                            name: menu.name
+                        });
+                    } else {
+                        this.menuOpenIndex = index;
+                    }
                 }
+            },
 
-                if (!menu.children || menu.children.length === 0) {
-                    this.$router.push({
-                        name: menu.name
-                    });
+            checkIsExist(data) {
+                if (data.name === this.$route.name) return true;
+                if (data.children && data.children.length > 0) {
+                    for (let item of data.children) {
+                        return this.checkIsExist(item);
+                    }
+                } else {
+                    return false;
                 }
             }
         },

@@ -29,6 +29,14 @@
             }
         },
 
+        created() {
+            for (let [index, item] of this.menuList.entries()) {
+                if (this.checkIsExist(item)) {
+                    this.menuOpenIndex = index;
+                }
+            }
+        },
+
         watch: {
             '$route' (to) {
                 this.currentPageName = to.name;
@@ -47,6 +55,17 @@
                     this.$router.push({
                         name: menu.name
                     });
+                }
+            },
+
+            checkIsExist(data) {
+                if (data.name === this.$route.name) return true;
+                if (data.children && data.children.length > 0) {
+                    for (let item of data.children) {
+                        return this.checkIsExist(item);
+                    }
+                } else {
+                    return false;
                 }
             }
         },
