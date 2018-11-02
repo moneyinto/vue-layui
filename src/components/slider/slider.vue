@@ -5,7 +5,7 @@
                 <span>Vue layuiAdmin</span>
             </div>
             <ul class="layui-nav layui-nav-tree">
-                <li class="layui-nav-item" v-for="(item, index) in menuList" :key="index" :class="{'layui-this': item.name === $router.history.current.name, 'layui-nav-itemed': menuOpenIndex === index }">
+                <li class="layui-nav-item" v-for="(item, index) in menuList" :key="index" :class="{'layui-this': item.name === currentPageName, 'layui-nav-itemed': menuOpenIndex === index }">
                     <a href="javascript:;" @click="selectMenu(item, index)">
                         <i class="layui-icon layui-icon-home"></i>
                         <cite>{{item.title}}</cite>
@@ -31,7 +31,8 @@
 
         data() {
             return {
-                menuOpenIndex: null
+                menuOpenIndex: null,
+                currentPageName: this.$route.name
             };
         },
 
@@ -42,8 +43,10 @@
             }
         },
 
-        mounted() {
-            console.log(this.$router.history.current.name);
+        watch: {
+            '$route' (to) {
+                this.currentPageName = to.name;
+            }
         },
 
         methods: {
@@ -52,6 +55,12 @@
                     this.menuOpenIndex = null;
                 } else {
                     this.menuOpenIndex = index;
+                }
+
+                if (!menu.children || menu.children.length === 0) {
+                    this.$router.push({
+                        name: menu.name
+                    });
                 }
             }
         },

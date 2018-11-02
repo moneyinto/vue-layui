@@ -3,6 +3,9 @@ import Router from 'vue-router';
 import Main from '@/pages/Main';
 import Home from '@/pages/home/home';
 
+import GridList from '@/pages/component/grid/grid-list';
+import GridMobile from '@/pages/component/grid/grid-mobile';
+
 Vue.use(Router);
 
 export const otherRouter = [
@@ -31,15 +34,17 @@ export const appRouter = [
                 path: 'grid',
                 children: [
                     {
-                        name: 'list',
+                        name: 'gridList',
                         title: '等比例列表排列',
-                        path: 'list'
+                        path: 'list',
+                        component: GridList
                     },
 
                     {
-                        name: 'mobile',
+                        name: 'gridMobile',
                         title: '按移动端排列',
-                        path: 'mobile'
+                        path: 'mobile',
+                        component: GridMobile
                     }
                 ]
             }
