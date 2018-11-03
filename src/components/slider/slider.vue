@@ -74,14 +74,14 @@
             },
 
             checkIsExist(data) {
-                if (data.name === this.$route.name) return true;
+                let isExist = false;
+                if (data.name === this.$route.name) isExist = true;
                 if (data.children && data.children.length > 0) {
                     for (let item of data.children) {
-                        return this.checkIsExist(item);
+                        if (this.checkIsExist(item)) isExist = true;
                     }
-                } else {
-                    return false;
                 }
+                return isExist;
             }
         },
 

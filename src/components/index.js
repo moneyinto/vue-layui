@@ -5,6 +5,7 @@ import Alert from './alert';
 import Header from './header';
 import Slider from './slider';
 import Drawer from './drawer';
+import Tabs from './tabs';
 
 const AllCmponents = {
     Toaster,
@@ -15,7 +16,8 @@ const AllCmponents = {
 const vLayUI = {
     Header,
     Slider,
-    Drawer
+    Drawer,
+    Tabs
 };
 
 const install = (Vue, opts = {}) => {

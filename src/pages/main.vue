@@ -7,7 +7,10 @@
                 <div class="layadmin-body-shade" @click="$store.commit('toggleSlider')"></div>
                 <div class="layui-body" id="LAY_app_body">
                     <div class="layadmin-tabsbody-item layui-show">
-                        <router-view></router-view>
+                        <Tabs></Tabs>
+                        <div class="layui-fluid">
+                            <router-view></router-view>
+                        </div>
                     </div>
                 </div>
             </div>
