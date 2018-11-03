@@ -71,6 +71,7 @@
                         this.menuOpenIndex = index;
                     }
                 }
+                if (!this.$store.state.isSMWidth) this.$store.state.isCloseSlider = true;
             },
 
             checkIsExist(data) {

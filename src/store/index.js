@@ -27,6 +27,8 @@ const Store = new Vuex.Store({
     state: {
         isCloseSlider: false,
         isFullScreen: false,
+        isSMWidth: false,
+        isLGWidth: false,
         userInfo: null,
         theme: JSON.parse(localStorage.VUE_LAYUI_ADMIN_THEME || JSON.stringify(Theme[0])),
         menuListL: []
