@@ -8,6 +8,11 @@ import Grid from '@/pages/component/grid/grid';
 import GridList from '@/pages/component/grid/grid-list';
 import GridMobile from '@/pages/component/grid/grid-mobile';
 
+import Panel from '@/pages/component/panel/panel';
+
+import Table from '@/pages/component/table/table';
+import TableTotalRow from '@/pages/component/table/table-total-row';
+
 Vue.use(Router);
 
 export const otherRouter = [
@@ -51,6 +56,29 @@ export const appRouter = [
                         title: '按移动端排列',
                         path: 'mobile',
                         component: GridMobile
+                    }
+                ]
+            },
+
+            {
+                name: 'panel',
+                title: '面板',
+                path: 'panel',
+                component: Panel
+            },
+
+            {
+                name: 'table',
+                title: '表格',
+                path: 'table',
+                redirect: '/component/table/totalRow',
+                component: Table,
+                children: [
+                    {
+                        name: 'totalRow',
+                        title: '开启合计行',
+                        path: 'totalRow',
+                        component: TableTotalRow
                     }
                 ]
             }

@@ -6,6 +6,9 @@ import Header from './header';
 import Slider from './slider';
 import Drawer from './drawer';
 import Tabs from './tabs';
+import Table from './table';
+import Panel from './panel';
+import Card from './card';
 
 const AllCmponents = {
     Toaster,
@@ -17,7 +20,10 @@ const vLayUI = {
     Header,
     Slider,
     Drawer,
-    Tabs
+    Tabs,
+    Table,
+    Panel,
+    Card
 };
 
 const install = (Vue, opts = {}) => {

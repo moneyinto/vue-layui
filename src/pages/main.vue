@@ -1,20 +1,20 @@
 <template>
     <div class="layadmin-tabspage-none" :class="$store.state.isSMWidth ? ($store.state.isCloseSlider ? '': 'layadmin-side-spread-sm') : ($store.state.isCloseSlider ? '': 'layadmin-side-shrink')">
-            <div class="layui-layout layui-layout-admin">
-                <Header></Header>
-                <Slider :menuList="$store.state.menuList"></Slider>
-                <Drawer></Drawer>
-                <div class="layadmin-body-shade" @click="$store.commit('toggleSlider')"></div>
-                <div class="layui-body" id="LAY_app_body">
-                    <div class="layadmin-tabsbody-item layui-show">
-                        <Tabs></Tabs>
-                        <div class="layui-fluid">
-                            <router-view></router-view>
-                        </div>
+        <div class="layui-layout layui-layout-admin">
+            <Header></Header>
+            <Slider :menuList="$store.state.menuList"></Slider>
+            <Drawer></Drawer>
+            <div class="layadmin-body-shade" @click="$store.commit('toggleSlider')"></div>
+            <div class="layui-body" id="LAY_app_body">
+                <div class="layadmin-tabsbody-item layui-show">
+                    <Tabs></Tabs>
+                    <div class="layui-fluid">
+                        <router-view></router-view>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </template>
 
 <script>
