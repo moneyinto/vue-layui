@@ -5,8 +5,31 @@ import App from './App';
 import { router } from './router';
 import Store from './store';
 import vLayUI from './components';
+import VueCookie from 'vue-cookie';
 
 Vue.use(vLayUI);
+Vue.use(VueCookie);
+
+router.beforeEach((to, from, next) => {
+    vLayUI.Loading.start();
+    // Util.title(to.meta.title);
+    let token = VueCookie.get('LAYUI_TOKEN');
+    if (token) { // 判断当前是否为登录状态
+        next();
+    } else {
+        if (to.name === 'login') {
+            next();
+        } else {
+            router.replace({
+                name: 'login'
+            });
+        }
+    }
+});
+
+router.afterEach(() => {
+    vLayUI.Loading.end();
+});
 
 new Vue({
     el: '#app',

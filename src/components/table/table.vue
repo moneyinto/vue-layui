@@ -53,8 +53,7 @@
                         let checkStatus = table.checkStatus(obj.config.id);
                         switch (obj.event) {
                         case 'getCheckData':
-                            let data = checkStatus.data;
-                            layer.alert(JSON.stringify(data));
+                            layer.alert(JSON.stringify(checkStatus.data));
                             break;
                         case 'getCheckLength':
                             layer.msg('选中了：' + checkStatus.data.length + ' 个');

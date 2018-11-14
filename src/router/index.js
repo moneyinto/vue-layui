@@ -12,11 +12,17 @@ import Panel from '@/pages/component/panel/panel';
 
 import Table from '@/pages/component/table/table';
 import TableTotalRow from '@/pages/component/table/table-total-row';
+import Login from '@/pages/login/login';
 
 Vue.use(Router);
 
 export const otherRouter = [
-
+    {
+        name: 'login',
+        title: '登录',
+        path: '/login',
+        component: Login
+    }
 ];
 
 // 左侧slide显示的页面路由配置位置

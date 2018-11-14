@@ -1,6 +1,4 @@
-import Toaster from './toaster';
 import Loading from './loading';
-import Alert from './alert';
 
 import Header from './header';
 import Slider from './slider';
@@ -11,9 +9,7 @@ import Panel from './panel';
 import Card from './card';
 
 const AllCmponents = {
-    Toaster,
-    Loading,
-    Alert
+    Loading
 };
 
 const vLayUI = {
@@ -28,7 +24,7 @@ const vLayUI = {
 
 const install = (Vue, opts = {}) => {
     Object.keys(AllCmponents).forEach(key => {
-        AllCmponents[key](Vue);
+        Vue.prototype[`$${key}`] = AllCmponents[key];
     });
 
     Object.keys(vLayUI).forEach(key => {
@@ -37,7 +33,8 @@ const install = (Vue, opts = {}) => {
 };
 
 const API = {
-    install
+    install,
+    ...AllCmponents
 };
 
 export default API;
