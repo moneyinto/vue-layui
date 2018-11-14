@@ -1316,13 +1316,17 @@ html {
 }
 
 .layadmin-tips {
-    margin-top: 30px;
-    text-align: center
+    position: fixed;
+    top: 40%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transform: translateY(-50%);
 }
 
 .layadmin-tips .layui-icon[face] {
     display: inline-block;
-    font-size: 300px;
+    font-size: 200px;
     color: #393D49
 }
 
@@ -1357,5 +1361,14 @@ html {
     .layui-layout-admin .layui-body .layadmin-tabsbody-item {
         -webkit-overflow-scrolling: touch;
         overflow: auto
+    }
+
+    .layadmin-tips .layui-text {
+        width: 80%;
+        margin: 30px auto;
+        padding-top: 20px;
+        border-top: 5px solid #009688;
+        font-size: 16px;
+        min-width: 320px;
     }
 }

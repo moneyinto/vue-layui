@@ -14,10 +14,10 @@ router.beforeEach((to, from, next) => {
     vLayUI.Loading.start();
     // Util.title(to.meta.title);
     let token = VueCookie.get('LAYUI_TOKEN');
-    if (token) { // 判断当前是否为登录状态
+    if (token) {
         next();
     } else {
-        if (to.name === 'login') {
+        if (to.name === 'login' || to.name === '404') {
             next();
         } else {
             router.replace({

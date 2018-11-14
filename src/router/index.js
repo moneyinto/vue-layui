@@ -12,7 +12,9 @@ import Panel from '@/pages/component/panel/panel';
 
 import Table from '@/pages/component/table/table';
 import TableTotalRow from '@/pages/component/table/table-total-row';
+
 import Login from '@/pages/login/login';
+import Error404 from '@/pages/error/404';
 
 Vue.use(Router);
 
@@ -22,6 +24,13 @@ export const otherRouter = [
         title: '登录',
         path: '/login',
         component: Login
+    },
+
+    {
+        name: '404',
+        title: '404-页面不存在',
+        path: '/*',
+        component: Error404
     }
 ];
 
@@ -102,8 +111,8 @@ const mainRouter = {
 
 // 所有上面定义的路由都要写在下面的routers里
 export const routes = [
-    ...otherRouter,
-    mainRouter
+    mainRouter,
+    ...otherRouter
 ];
 
 export const router = new Router({
