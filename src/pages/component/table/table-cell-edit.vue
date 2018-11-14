@@ -1,6 +1,6 @@
 <template>
     <Card title="开启单元格编辑">
-        <Table :options="options"></Table>
+        <Table :options="options" @table-cell-edit-event="cellEditEvent"></Table>
     </Card>
 </template>
 
@@ -55,6 +55,15 @@
                     ]]
                 }
             };
+        },
+
+        methods: {
+            cellEditEvent(obj) {
+                let value = obj.value; // 得到修改后的值
+                let data = obj.data; // 得到所在行所有键值
+                let field = obj.field; // 得到字段
+                this.$layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
+            }
         }
     };
 </script>

@@ -1,6 +1,6 @@
 <template>
     <Card title="加入表单元素">
-        <Table :options="options"></Table>
+        <Table :options="options" @table-switch-event="switchEvent" @table-checkbox-event="checkboxEvent"></Table>
     </Card>
 </template>
 
@@ -51,8 +51,7 @@
                             title: '性别',
                             width: 85,
                             templet: (res) => {
-                                console.log(res);
-                                return `<input type="checkbox" name="sex" value="${res.sex}" lay-skin="switch" lay-text="女|男" lay-filter="sex">`;
+                                return `<input type="checkbox" name="sex" value="${res.id}" lay-skin="switch" lay-text="女|男" lay-filter="sex" ${res.sex === '女' ? 'checked' : ''}>`;
                             },
                             unresize: true
                         },
@@ -61,6 +60,9 @@
                             field: 'lock',
                             title: '是否锁定',
                             width: 110,
+                            templet: (res) => {
+                                return `<input type="checkbox" name="lock" value="${res.id}" title="锁定" lay-filter="lock">`;
+                            },
                             unresize: true
                         }
                     ]],
@@ -68,6 +70,16 @@
                     page: true
                 }
             };
+        },
+
+        methods: {
+            switchEvent(ele, obj) {
+                this.$layer.tips(ele.value + ' ' + ele.name + '：' + obj.elem.checked, obj.othis);
+            },
+
+            checkboxEvent(ele, obj) {
+                this.$layer.tips(ele.value + ' ' + ele.name + '：' + obj.elem.checked, obj.othis);
+            }
         }
     };
 </script>

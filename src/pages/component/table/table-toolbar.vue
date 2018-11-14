@@ -1,6 +1,6 @@
 <template>
     <Card title="开启头部工具栏">
-        <Table :options="options">
+        <Table :options="options" @table-toolbar-event="toolbarEvent" @table-bar-event="barEvent">
             <div mref="toolbar">
                 <div class="layui-btn-container">
                     <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
@@ -117,6 +117,43 @@
                     page: true
                 }
             };
+        },
+
+        methods: {
+            toolbarEvent(obj) {
+                let checkStatus = this.$layui.table.checkStatus(obj.config.id);
+                switch (obj.event) {
+                case 'getCheckData':
+                    this.$layer.alert(JSON.stringify(checkStatus.data));
+                    break;
+                case 'getCheckLength':
+                    this.$layer.msg('选中了：' + checkStatus.data.length + ' 个');
+                    break;
+                case 'isAll':
+                    this.$layer.msg(checkStatus.isAll ? '全选' : '未全选');
+                    break;
+                };
+            },
+
+            barEvent(obj) {
+                let data = obj.data;
+                if (obj.event === 'del') {
+                    this.$layer.confirm('真的删除行么', (index) => {
+                        obj.del();
+                        this.$layer.close(index);
+                    });
+                } else if (obj.event === 'edit') {
+                    this.$layer.prompt({
+                        formType: 2,
+                        value: data.email
+                    }, (value, index) => {
+                        obj.update({
+                            email: value
+                        });
+                        this.$layer.close(index);
+                    });
+                }
+            }
         }
     };
 </script>

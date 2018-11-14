@@ -30,6 +30,9 @@ const install = (Vue, opts = {}) => {
     Object.keys(vLayUI).forEach(key => {
         Vue.component(key, vLayUI[key]);
     });
+
+    Vue.prototype.$layui = window.layui;
+    Vue.prototype.$layer = window.layer;
 };
 
 const API = {

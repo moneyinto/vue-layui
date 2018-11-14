@@ -8,8 +8,7 @@
 </template>
 
 <script>
-    const layui = window.layui;
-    const layer = window.layer;
+    let self = null;
     export default {
         props: {
             options: {
@@ -27,9 +26,11 @@
         },
 
         mounted() {
+            self = this;
             this.$nextTick(() => {
-                layui.use('table', () => {
-                    const table = layui.table;
+                this.$layui.use('table', () => {
+                    const table = this.$layui.table;
+                    const form = this.$layui.form;
                     let options = {
                         elem: this.$refs.table
                     };
@@ -50,48 +51,26 @@
 
                     // 头工具栏事件
                     table.on('toolbar', (obj) => {
-                        let checkStatus = table.checkStatus(obj.config.id);
-                        switch (obj.event) {
-                        case 'getCheckData':
-                            layer.alert(JSON.stringify(checkStatus.data));
-                            break;
-                        case 'getCheckLength':
-                            layer.msg('选中了：' + checkStatus.data.length + ' 个');
-                            break;
-                        case 'isAll':
-                            layer.msg(checkStatus.isAll ? '全选' : '未全选');
-                            break;
-                        };
+                        this.$emit('table-toolbar-event', obj);
                     });
 
                     // 监听行工具事件
                     table.on('tool', (obj) => {
-                        let data = obj.data;
-                        console.log(obj);
-                        if (obj.event === 'del') {
-                            layer.confirm('真的删除行么', (index) => {
-                                obj.del();
-                                layer.close(index);
-                            });
-                        } else if (obj.event === 'edit') {
-                            layer.prompt({
-                                formType: 2,
-                                value: data.email
-                            }, (value, index) => {
-                                obj.update({
-                                    email: value
-                                });
-                                layer.close(index);
-                            });
-                        }
+                        this.$emit('table-bar-event', obj);
                     });
 
                     // 监听单元格编辑
                     table.on('edit', (obj) => {
-                        let value = obj.value; // 得到修改后的值
-                        let data = obj.data; // 得到所在行所有键值
-                        let field = obj.field; // 得到字段
-                        layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
+                        this.$emit('table-cell-edit-event', obj);
+                    });
+
+                    // 监听表单事件
+                    form.on('switch', function(obj) {
+                        self.$emit('table-switch-event', this, obj);
+                    });
+
+                    form.on('checkbox', function(obj) {
+                        self.$emit('table-checkbox-event', this, obj);
                     });
                 });
             });
