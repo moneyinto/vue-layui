@@ -1,5 +1,8 @@
 <template>
     <div class="layadmin-user-login layadmin-user-display-show" ref="pgCanvas">
+        <div class="site-zfj site-zfj-anim">
+            <i class="layui-icon" style="color: #fff; color: rgba(255,255,255,.7);"></i>
+        </div>
         <div class="layadmin-user-login-main">
             <div class="layadmin-user-title">
                 <strong>Vue layui Admin</strong>
@@ -162,6 +165,64 @@
         .layadmin-user-login-box {
             padding: 10px
         }
+    }
+
+    .site-zfj{
+        padding-top: 25px;
+        height: 220px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+    .site-zfj i{
+        position: absolute;
+        left: 50%;
+        top: 25px;
+        width: 200px;
+        height: 200px;
+        margin-left: -100px;
+        font-size: 200px;
+        color: #c2c2c2;
+    }
+
+    @-webkit-keyframes site-zfj {
+        0% {opacity: 1;  -webkit-transform: translate3d(0, 0, 0) rotate(0deg) scale(1);}
+        10% {opacity: 0.8; -webkit-transform: translate3d(-100px, 0px, 0) rotate(10deg) scale(0.7);}
+        35% {opacity: 0.6; -webkit-transform: translate3d(100px, 0px, 0) rotate(30deg) scale(0.4);}
+        50% {opacity: 0.4; -webkit-transform: translate3d(0, 0, 0) rotate(360deg) scale(0);}
+        80% {opacity: 0.2; -webkit-transform: translate3d(0, 0, 0) rotate(720deg) scale(1);}
+        90% {opacity: 0.1; -webkit-transform: translate3d(0, 0, 0) rotate(3600deg) scale(6);}
+        100% {opacity: 1; -webkit-transform: translate3d(0, 0, 0) rotate(3600deg) scale(1);}
+    }
+
+    @keyframes site-zfj {
+        0% {opacity: 1;  transform: translate3d(0, 0, 0) rotate(0deg) scale(1);}
+        10% {opacity: 0.8; transform: translate3d(-100px, 0px, 0) rotate(10deg) scale(0.7);}
+        35% {opacity: 0.6; transform: translate3d(100px, 0px, 0) rotate(30deg) scale(0.4);}
+        50% {opacity: 0.4; transform: translate3d(0, 0, 0) rotate(360deg) scale(0);}
+        80% {opacity: 0.2; transform: translate3d(0, 0, 0) rotate(720deg) scale(1);}
+        90% {opacity: 0.1; transform: translate3d(0, 0, 0) rotate(3600deg) scale(6);}
+        100% {opacity: 1; transform: translate3d(0, 0, 0) rotate(3600deg) scale(1);}
+    }
+
+    @-webkit-keyframes site-desc {
+        0% { -webkit-transform: scale(1.1);}
+        100% {opacity: 1; -webkit-transform: scale(1);}
+    }
+
+    @keyframes site-desc {
+        0% { transform: scale(1.1);}
+        100% {transform: scale(1);}
+    }
+
+    .site-zfj-anim i{
+        -webkit-animation-name: site-zfj;
+        animation-name: site-zfj;
+        -webkit-animation-duration: 5s;
+        animation-duration: 5s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
     }
 </style>
 

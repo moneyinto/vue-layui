@@ -63,6 +63,36 @@
                             break;
                         };
                     });
+
+                    // 监听行工具事件
+                    table.on('tool', (obj) => {
+                        let data = obj.data;
+                        console.log(obj);
+                        if (obj.event === 'del') {
+                            layer.confirm('真的删除行么', (index) => {
+                                obj.del();
+                                layer.close(index);
+                            });
+                        } else if (obj.event === 'edit') {
+                            layer.prompt({
+                                formType: 2,
+                                value: data.email
+                            }, (value, index) => {
+                                obj.update({
+                                    email: value
+                                });
+                                layer.close(index);
+                            });
+                        }
+                    });
+
+                    // 监听单元格编辑
+                    table.on('edit', (obj) => {
+                        let value = obj.value; // 得到修改后的值
+                        let data = obj.data; // 得到所在行所有键值
+                        let field = obj.field; // 得到字段
+                        layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
+                    });
                 });
             });
         }
