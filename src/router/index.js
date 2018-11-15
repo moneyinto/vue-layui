@@ -10,6 +10,9 @@ import GridMobile from '@/pages/component/grid/grid-mobile';
 
 import Panel from '@/pages/component/panel/panel';
 
+import DateTime from '@/pages/component/dateTime/dateTime';
+import DateTimeDemo from '@/pages/component/dateTime/dateTimeDemo';
+
 import Table from '@/pages/component/table/table';
 import TableSimple from '@/pages/component/table/table-simple';
 import TableAuto from '@/pages/component/table/table-auto';
@@ -100,6 +103,22 @@ export const appRouter = [
                 title: '面板',
                 path: 'panel',
                 component: Panel
+            },
+
+            {
+                name: 'dateTime',
+                title: '日期时间',
+                path: 'dateTime',
+                redirect: '/component/dateTime/demo',
+                component: DateTime,
+                children: [
+                    {
+                        name: 'dateTimeDemo',
+                        title: '功能演示',
+                        path: 'demo',
+                        component: DateTimeDemo
+                    }
+                ]
             },
 
             {

@@ -4,6 +4,7 @@ import Header from './header';
 import Slider from './slider';
 import Drawer from './drawer';
 import Tabs from './tabs';
+import DateTime from './dateTime';
 import Table from './table';
 import Panel from './panel';
 import Card from './card';
@@ -17,6 +18,7 @@ const vLayUI = {
     Slider,
     Drawer,
     Tabs,
+    DateTime,
     Table,
     Panel,
     Card
