@@ -64,13 +64,33 @@
                         this.$emit('table-cell-edit-event', obj);
                     });
 
+                    // 监听表格复选框选择
+                    table.on('checkbox', (obj) => {
+                        this.$emit('table-checkbox-event', obj);
+                    });
+
+                    // 监听行单击事件
+                    table.on('row', (obj) => {
+                        this.$emit('table-row-event', obj);
+                    });
+
+                    // 监听行双击事件
+                    table.on('rowDouble', (obj) => {
+                        this.$emit('table-row-double-event', obj);
+                    });
+
+                    // 监听排序事件
+                    table.on('sort', (obj) => {
+                        this.$emit('table-sort-event', obj);
+                    });
+
                     // 监听表单事件
                     form.on('switch', function(obj) {
-                        self.$emit('table-switch-event', this, obj);
+                        self.$emit('table-form-switch-event', this, obj);
                     });
 
                     form.on('checkbox', function(obj) {
-                        self.$emit('table-checkbox-event', this, obj);
+                        self.$emit('table-form-checkbox-event', this, obj);
                     });
                 });
             });

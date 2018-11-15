@@ -1,6 +1,6 @@
 <template>
     <Card title="加入表单元素">
-        <Table :options="options" @table-switch-event="switchEvent" @table-checkbox-event="checkboxEvent"></Table>
+        <Table :options="options" @table-form-switch-event="switchEvent" @table-form-checkbox-event="checkboxEvent"></Table>
     </Card>
 </template>
 
