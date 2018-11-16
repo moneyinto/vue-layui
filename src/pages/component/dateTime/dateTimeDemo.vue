@@ -281,12 +281,12 @@
                 </div>
                 <div class="layui-inline">
                     <DateTime placeholder="yyyy-MM-dd" :options="{position: 'static', type: 'month'}" :isInput="false">
-                        <div class="layui-inline"></div>
+                        <div></div>
                     </DateTime>
                 </div>
                 <div class="layui-inline">
                     <DateTime placeholder="yyyy-MM-dd" :options="{position: 'static', type: 'time'}" :isInput="false">
-                        <div class="layui-inline"></div>
+                        <div></div>
                     </DateTime>
                 </div>
             </div>
@@ -313,6 +313,10 @@
 <style scoped>
     .layui-form-item:last-child {
         margin-bottom: 0;
+    }
+
+    .site-demo-laydate .layui-inline {
+        margin: 0 20px 20px 0;
     }
 </style>
 
