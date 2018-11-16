@@ -241,6 +241,56 @@
                 </div>
             </div>
         </Card>
+
+        <Card title="其他主题">
+            <div class="layui-form" wid100>
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <label class="layui-form-label">墨绿主题</label>
+                        <div class="layui-input-inline">
+                            <DateTime placeholder="yyyy-MM-dd" :options="{theme: 'molv'}"></DateTime>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">自定义颜色主题</label>
+                        <div class="layui-input-inline">
+                            <DateTime placeholder="yyyy-MM-dd" :options="{theme: '#393D49'}"></DateTime>
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <label class="layui-form-label">格子主题</label>
+                        <div class="layui-input-inline">
+                            <DateTime placeholder="yyyy-MM-dd" :options="{theme: 'grid'}"></DateTime>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </Card>
+
+        <Card title="直接嵌套显示">
+            <div class="site-demo-laydate">
+                <div class="layui-inline">
+                    <DateTime placeholder="yyyy-MM-dd" :options="{position: 'static'}" :isInput="false">
+                        <div></div>
+                    </DateTime>
+                </div>
+                <div class="layui-inline">
+                    <DateTime placeholder="yyyy-MM-dd" :options="{position: 'static', lang: 'en'}" :isInput="false">
+                        <div></div>
+                    </DateTime>
+                </div>
+                <div class="layui-inline">
+                    <DateTime placeholder="yyyy-MM-dd" :options="{position: 'static', type: 'month'}" :isInput="false">
+                        <div class="layui-inline"></div>
+                    </DateTime>
+                </div>
+                <div class="layui-inline">
+                    <DateTime placeholder="yyyy-MM-dd" :options="{position: 'static', type: 'time'}" :isInput="false">
+                        <div class="layui-inline"></div>
+                    </DateTime>
+                </div>
+            </div>
+        </Card>
     </div>
 </template>
 
