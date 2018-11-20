@@ -8,6 +8,8 @@ import Grid from '@/pages/component/grid/grid';
 import GridList from '@/pages/component/grid/grid-list';
 import GridMobile from '@/pages/component/grid/grid-mobile';
 
+import Button from '@/pages/component/button/button';
+
 import Panel from '@/pages/component/panel/panel';
 
 import DateTime from '@/pages/component/dateTime/dateTime';
@@ -96,6 +98,13 @@ export const appRouter = [
                         component: GridMobile
                     }
                 ]
+            },
+
+            {
+                name: 'button',
+                title: '按钮',
+                path: 'button',
+                component: Button
             },
 
             {
