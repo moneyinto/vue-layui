@@ -18,10 +18,18 @@
             <Card title="下拉选择框">
                 <div class="layui-row layui-col-space10">
                     <div class="layui-col-md6">
-                        <Select :source="list"></Select>
+                        <Select :source="list2" placeholder="请选择一个城市"></Select>
                     </div>
                     <div class="layui-col-md6">
-                        <Select :source="list"></Select>
+                        <Select :source="list2"></Select>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10">
+                    <div class="layui-col-md6">
+                        <Select :group="true" :source="list3" placeholder="请选择一个城市"></Select>
+                    </div>
+                    <div class="layui-col-md6">
+                        <Select :source="list2"></Select>
                     </div>
                 </div>
             </Card>
@@ -33,7 +41,7 @@
     export default {
         data() {
             return {
-                list: [
+                list1: [
                     {
                         name: '北京',
                         value: 0
@@ -48,24 +56,55 @@
                         name: '杭州',
                         value: 2
                     }
-                ]
-            };
-        },
+                ],
 
-        mounted() {
-            setTimeout(() => {
-                this.list = [
+                list2: [
                     {
                         name: '北京',
-                        value: 0
+                        value: 0,
+                        selected: true
                     },
 
                     {
-                        name: '上海',
-                        value: 1
+                        name: '上海（禁用效果）',
+                        value: 1,
+                        disabled: true
+                    },
+
+                    {
+                        name: '杭州',
+                        value: 2
                     }
-                ];
-            }, 2000);
+                ],
+
+                list3: [
+                    {
+                        label: '城市记忆',
+                        list: [
+                            {
+                                name: '你工作的第一个城市？',
+                                value: 0,
+                                selected: true
+                            }
+                        ]
+                    },
+
+                    {
+                        label: '学生时代',
+                        list: [
+                            {
+                                name: '你的工号？',
+                                value: 1
+                            },
+
+                            {
+                                name: '你最喜欢的老师？',
+                                value: 2
+                            }
+                        ]
+                    }
+                ]
+            };
         }
     };
 </script>

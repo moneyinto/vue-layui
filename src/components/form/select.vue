@@ -2,7 +2,11 @@
     <form class="layui-form" :lay-filter="'form_' + _uid">
         <select :lay-filter="'select_' + _uid">
             <option value="">{{placeholder}}</option>
-            <option :value="item.value" v-for="(item, index) in source" :key="index">{{item.name}}</option>
+            <option v-if="!group" :value="item.value" v-for="(item, index) in source" :key="index" :selected="item.selected" :disabled="item.disabled">{{item.name}}</option>
+
+            <optgroup v-if="group" :label="item.label" v-for="(item, index) in source" :key="index">
+                <option :value="child.value" v-for="(child, i) in item.list" :key="i" :selected="child.selected" :disabled="child.disabled">{{child.name}}</option>
+            </optgroup>
         </select>
     </form>
 </template>
@@ -19,14 +23,21 @@
             placeholder: {
                 type: String,
                 default: ''
+            },
+
+            group: {
+                type: Boolean,
+                default: false
             }
         },
 
         watch: {
             source (val) {
-                this.$nextTick(() => {
-                    this.$layui.form.render('select', `form_${this._uid}`);
-                });
+                this.render();
+            },
+
+            placeholder (val) {
+                this.render();
             }
         },
 
@@ -40,6 +51,14 @@
                     console.log(val);
                 });
             });
+        },
+
+        methods: {
+            render() {
+                this.$nextTick(() => {
+                    this.$layui.form.render('select', `form_${this._uid}`);
+                });
+            }
         }
     };
 </script>
