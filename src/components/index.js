@@ -8,6 +8,7 @@ import DateTime from './dateTime';
 import Table from './table';
 import Panel from './panel';
 import Card from './card';
+import Form from './form';
 
 const AllCmponents = {
     Loading
@@ -21,7 +22,8 @@ const vLayUI = {
     DateTime,
     Table,
     Panel,
-    Card
+    Card,
+    ...Form
 };
 
 const install = (Vue, opts = {}) => {

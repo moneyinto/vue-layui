@@ -10,6 +10,9 @@ import GridMobile from '@/pages/component/grid/grid-mobile';
 
 import Button from '@/pages/component/button/button';
 
+import Form from '@/pages/component/form/form';
+import FormElement from '@/pages/component/form/formElement';
+
 import Panel from '@/pages/component/panel/panel';
 
 import DateTime from '@/pages/component/dateTime/dateTime';
@@ -105,6 +108,22 @@ export const appRouter = [
                 title: '按钮',
                 path: 'button',
                 component: Button
+            },
+
+            {
+                name: 'form',
+                title: '表单',
+                path: 'form',
+                redirect: '/component/form/element',
+                component: Form,
+                children: [
+                    {
+                        name: 'element',
+                        title: '表单元素',
+                        path: 'element',
+                        component: FormElement
+                    }
+                ]
             },
 
             {
