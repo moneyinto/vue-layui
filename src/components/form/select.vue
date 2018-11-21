@@ -1,6 +1,6 @@
 <template>
     <form class="layui-form" :lay-filter="'form_' + _uid">
-        <select :lay-filter="'select_' + _uid">
+        <select :lay-filter="'select_' + _uid" :lay-search="search">
             <option value="">{{placeholder}}</option>
             <option v-if="!group" :value="item.value" v-for="(item, index) in source" :key="index" :selected="item.selected" :disabled="item.disabled">{{item.name}}</option>
 
@@ -28,6 +28,11 @@
             group: {
                 type: Boolean,
                 default: false
+            },
+
+            search: {
+                type: Boolean,
+                default: false
             }
         },
 
@@ -37,6 +42,14 @@
             },
 
             placeholder (val) {
+                this.render();
+            },
+
+            group () {
+                this.render();
+            },
+
+            search () {
                 this.render();
             }
         },

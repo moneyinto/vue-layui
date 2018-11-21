@@ -26,10 +26,10 @@
                 </div>
                 <div class="layui-row layui-col-space10">
                     <div class="layui-col-md6">
-                        <Select :group="true" :source="list3" placeholder="请选择一个城市"></Select>
+                        <Select :group="true" :source="list3"></Select>
                     </div>
                     <div class="layui-col-md6">
-                        <Select :source="list2"></Select>
+                        <Select :source="list1" :search="true" placeholder="带搜索的选择框"></Select>
                     </div>
                 </div>
             </Card>
