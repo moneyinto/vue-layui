@@ -33,6 +33,29 @@
                     </div>
                 </div>
             </Card>
+
+            <Card title="复选框">
+                <div class="layui-form-item">
+                    <CheckBox title="写作" :checked="true"></CheckBox>
+                    <CheckBox title="阅读"></CheckBox>
+                    <CheckBox title="禁用" :disabled="true"></CheckBox>
+                </div>
+
+                <div class="layui-form-item">
+                    <CheckBox title="写作" :checked="true" skin="primary"></CheckBox>
+                    <CheckBox title="阅读" skin="primary"></CheckBox>
+                    <CheckBox title="禁用" :disabled="true" skin="primary"></CheckBox>
+                </div>
+            </Card>
+
+            <Card title="开关">
+                <div class="layui-form-item">
+                    <CheckBox skin="switch"></CheckBox>
+                    <CheckBox skin="switch" :checked="true" text="ON|OFF"></CheckBox>
+                    <CheckBox skin="switch" text="开启|关闭"></CheckBox>
+                    <CheckBox :disabled="true" skin="switch"></CheckBox>
+                </div>
+            </Card>
         </div>
     </div>
 </template>
