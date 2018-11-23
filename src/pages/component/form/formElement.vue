@@ -63,6 +63,72 @@
                 </div>
             </Card>
         </div>
+
+        <div class="layui-col-md6">
+            <Card title="文本域">
+                <textarea placeholder="请输入内容" class="layui-textarea" name="desc"></textarea>
+            </Card>
+
+            <Card title="响应式组合">
+                <div class="layui-elem-quote">
+                    <p>【注】form表单为了提交获取值更加方便，但是Checkbox还是不要用form表单的提交获取值，获取后还要对数据进行处理，可以使用Checkbox和CheckboxList封装的v-model。<br />重置目前因为input的checked属性赋值有问题，会清空radio和checkbox默认选中的值。</p>
+                </div>
+                <form class="layui-form">
+                    <div class="layui-row layui-col-space10 layui-form-item">
+                        <div class="layui-col-lg6">
+                            <label class="layui-form-label">员工姓名：</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="fullname" placeholder="" autocomplete="off" class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-col-lg6">
+                            <label class="layui-form-label">技术工种：</label>
+                            <div class="layui-input-block">
+                                 <Select :source="list4" :name="'type'"></Select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">兴趣爱好：</label>
+                        <CheckBox title="写作" :name="'interest[write]'"></CheckBox>
+                        <CheckBox title="阅读" :name="'interest[read]'"></CheckBox>
+                        <CheckBox title="代码" :name="'interest[code]'"></CheckBox>
+                        <CheckBox title="做梦" :name="'interest[dreaming]'"></CheckBox>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">是否婚姻：</label>
+                        <CheckBox skin="switch" text="是|否" :name="'marriage'"></CheckBox>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">所属职称：</label>
+                        <RadioList :source="radioList2"></RadioList>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">其它信息：</label>
+                        <div class="layui-input-block">
+                            <textarea name="other" placeholder="" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <CheckBox title="同意" skin="primary" :name="'agreement'"></CheckBox>
+                        </div>
+                    </div>
+
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit="" lay-filter="submitTest">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </Card>
+        </div>
     </div>
 </template>
 
@@ -154,8 +220,77 @@
                         vaule: '禁用',
                         disabled: true
                     }
+                ],
+
+                list4: [
+                    {
+                        name: '前端工程师',
+                        value: 0
+                    },
+
+                    {
+                        name: 'Node.js工程师',
+                        value: 1
+                    },
+
+                    {
+                        name: 'PHP工程师',
+                        value: 2
+                    },
+
+                    {
+                        name: 'Java工程师',
+                        value: 3
+                    },
+
+                    {
+                        name: '运维',
+                        value: 4
+                    },
+
+                    {
+                        name: '视觉设计师',
+                        value: 5
+                    }
+                ],
+
+                radioList2: [
+                    {
+                        name: 'role',
+                        title: '经理',
+                        value: '经理',
+                        checked: true
+                    },
+
+                    {
+                        name: 'role',
+                        title: '主管',
+                        value: '主管'
+                    },
+
+                    {
+                        name: 'role',
+                        title: '码农',
+                        value: '码农'
+                    },
+
+                    {
+                        name: 'role',
+                        title: '端水',
+                        value: '端水'
+                    }
                 ]
             };
+        },
+
+        mounted() {
+            this.$nextTick(() => {
+                this.$layui.form.on('submit(submitTest)', (data) => {
+                    console.log(data);
+                    this.$layer.msg(JSON.stringify(data.field));
+                    return false;
+                });
+            });
         },
 
         methods: {

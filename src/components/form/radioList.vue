@@ -1,6 +1,6 @@
 <template>
     <div class="layui-form" :lay-filter="'form_' + _uid">
-        <input type="radio" :lay-filter="'radio_' + _uid" v-for="(item, index) in source" :key="index" :title="item.title" :checked="value == item.value" :value="item.value" :name="item.name" :disabled="item.disabled">
+        <input type="radio" :lay-filter="'radio_' + _uid" v-for="(item, index) in source" :key="index" :title="item.title" :checked="value == item.value || item.checked" :value="item.value" :name="item.name" :disabled="item.disabled">
     </div>
 </template>
 

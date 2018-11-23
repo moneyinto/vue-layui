@@ -91,7 +91,7 @@
     };
 </script>
 
-<style>
+<style scoped>
     .layui-card-body {
         height: 200px;
     }

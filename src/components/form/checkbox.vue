@@ -1,6 +1,6 @@
 <template>
     <div class="layui-form" :lay-filter="'form_' + _uid">
-        <input type="checkbox" :lay-filter="'checkbox_' + _uid" :title="title" :checked="checked" :disabled="disabled" :lay-skin="skin" :lay-text="text">
+        <input type="checkbox" :lay-filter="'checkbox_' + _uid" :title="title" :checked="checked" :disabled="disabled" :lay-skin="skin" :lay-text="text" :name="name">
     </div>
 </template>
 
@@ -9,6 +9,11 @@
         name: 'CheckBox',
         props: {
             title: {
+                type: String,
+                default: ''
+            },
+
+            name: {
                 type: String,
                 default: ''
             },
@@ -41,6 +46,10 @@
 
         watch: {
             title () {
+                this.render();
+            },
+
+            name() {
                 this.render();
             },
 
