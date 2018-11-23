@@ -1,7 +1,7 @@
 <template>
-    <form class="layui-form" :lay-filter="'form_' + _uid">
-        <input type="checkbox" :title="title" :checked="checked" :disabled="disabled" :lay-skin="skin" :lay-text="text">
-    </form>
+    <div class="layui-form" :lay-filter="'form_' + _uid">
+        <input type="checkbox" :lay-filter="'checkbox_' + _uid" :title="title" :checked="checked" :disabled="disabled" :lay-skin="skin" :lay-text="text">
+    </div>
 </template>
 
 <script>
@@ -34,6 +34,11 @@
             }
         },
 
+        model: {
+            prop: 'checked',
+            event: 'parent-event'
+        },
+
         watch: {
             title () {
                 this.render();
@@ -62,16 +67,16 @@
                 // 渲染指定表单
                 form.render('checkbox', `form_${this._uid}`);
 
-                // form.on(`checkbox(checkbox_${this._uid})`, (val) => {
-                //     console.log(val);
-                // });
+                form.on(`checkbox(checkbox_${this._uid})`, (val) => {
+                    this.$emit('parent-event', val.elem.checked);
+                    this.$emit('checkbox-change', val);
+                });
             });
         },
 
         methods: {
             render() {
                 this.$nextTick(() => {
-                    console.log('-------------');
                     this.$layui.form.render('checkbox', `form_${this._uid}`);
                 });
             }

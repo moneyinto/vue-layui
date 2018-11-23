@@ -1,14 +1,14 @@
 <template>
-    <form class="layui-form" :lay-filter="'form_' + _uid">
-        <select :lay-filter="'select_' + _uid" :lay-search="search">
+    <div class="layui-form" :lay-filter="'form_' + _uid">
+        <select :lay-filter="'select_' + _uid" :lay-search="search" :value="value">
             <option value="">{{placeholder}}</option>
-            <option v-if="!group" :value="item.value" v-for="(item, index) in source" :key="index" :selected="item.selected" :disabled="item.disabled">{{item.name}}</option>
+            <option v-if="!group" :value="item.value" v-for="(item, index) in source" :key="index" :disabled="item.disabled">{{item.name}}</option>
 
             <optgroup v-if="group" :label="item.label" v-for="(item, index) in source" :key="index">
-                <option :value="child.value" v-for="(child, i) in item.list" :key="i" :selected="child.selected" :disabled="child.disabled">{{child.name}}</option>
+                <option :value="child.value" v-for="(child, i) in item.list" :key="i" :disabled="child.disabled">{{child.name}}</option>
             </optgroup>
         </select>
-    </form>
+    </div>
 </template>
 
 <script>
@@ -33,7 +33,17 @@
             search: {
                 type: Boolean,
                 default: false
+            },
+
+            value: {
+                type: String,
+                default: ''
             }
+        },
+
+        model: {
+            prop: 'value',
+            event: 'parent-event'
         },
 
         watch: {
@@ -61,7 +71,8 @@
                 form.render('select', `form_${this._uid}`);
 
                 form.on(`select(select_${this._uid})`, (val) => {
-                    console.log(val);
+                    this.$emit('parent-event', val.value);
+                    this.$emit('select-change', val);
                 });
             });
         },
