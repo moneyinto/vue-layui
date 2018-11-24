@@ -38,6 +38,8 @@ import TableThead from '@/pages/component/table/table-thead';
 
 import Icon from '@/pages/component/icon/icon';
 
+import Editor from '@/pages/component/editor/editor';
+
 const componentRouter = {
     name: 'component',
     title: '组件',
@@ -276,6 +278,13 @@ const componentRouter = {
             title: '图标',
             path: 'icon',
             component: Icon
+        },
+
+        {
+            name: 'editor',
+            title: '富文本',
+            path: 'editor',
+            component: Editor
         }
     ]
 };

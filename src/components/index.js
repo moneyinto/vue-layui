@@ -9,6 +9,7 @@ import Table from './table';
 import Panel from './panel';
 import Card from './card';
 import Form from './form';
+import Editor from './editor';
 
 const AllCmponents = {
     Loading
@@ -23,7 +24,8 @@ const vLayUI = {
     Table,
     Panel,
     Card,
-    ...Form
+    ...Form,
+    Editor
 };
 
 const install = (Vue, opts = {}) => {
