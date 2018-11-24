@@ -1,0 +1,26 @@
+<link href="../../layui/css/layui.css" />
+<script src="../../layui/layui.all.js"></script>
+<pre class="layui-code" lay-title="vue">
+<template>
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-md12">
+            <input type="text" name="title" placeholder="请输入标题" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-col-md6">
+            <input type="text" name="title" placeholder="用户名" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-col-md6">
+            <input type="password" name="title" placeholder="密码" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+</template>
+</pre>
+
+<script>
+    layui.use('code', function() {
+        layui.code({
+            about: false,
+            encode: true
+        });
+    });
+</script>

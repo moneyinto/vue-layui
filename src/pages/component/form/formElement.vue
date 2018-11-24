@@ -1,7 +1,7 @@
 <template>
     <div class="layui-row layui-col-space15">
         <div class="layui-col-md6">
-            <Card title="输入框">
+            <Card title="输入框" icon="layui-icon-fonts-code" @icon-click="showDoc('输入框', 'input')">
                 <div class="layui-row layui-col-space10">
                     <div class="layui-col-md12">
                         <input type="text" name="title" placeholder="请输入标题" autocomplete="off" class="layui-input">
@@ -69,7 +69,7 @@
                 <textarea placeholder="请输入内容" class="layui-textarea" name="desc"></textarea>
             </Card>
 
-            <Card title="响应式组合">
+            <Card title="响应式组合" icon="layui-icon-fonts-code" @icon-click="showDoc('响应式组合代码', 'form')">
                 <div class="layui-elem-quote">
                     <p>【注】form表单为了提交获取值更加方便，但是Checkbox还是不要用form表单的提交获取值，获取后还要对数据进行处理，可以使用Checkbox和CheckboxList封装的v-model。<br />重置目前因为input的checked属性赋值有问题，会清空radio和checkbox默认选中的值。</p>
                 </div>
@@ -84,22 +84,22 @@
                         <div class="layui-col-lg6">
                             <label class="layui-form-label">技术工种：</label>
                             <div class="layui-input-block">
-                                 <Select :source="list4" :name="'type'"></Select>
+                                 <Select :source="list4" name="type"></Select>
                             </div>
                         </div>
                     </div>
 
                     <div class="layui-form-item">
                         <label class="layui-form-label">兴趣爱好：</label>
-                        <CheckBox title="写作" :name="'interest[write]'"></CheckBox>
-                        <CheckBox title="阅读" :name="'interest[read]'"></CheckBox>
-                        <CheckBox title="代码" :name="'interest[code]'"></CheckBox>
-                        <CheckBox title="做梦" :name="'interest[dreaming]'"></CheckBox>
+                        <CheckBox title="写作" name="interest[write]"></CheckBox>
+                        <CheckBox title="阅读" name="interest[read]"></CheckBox>
+                        <CheckBox title="代码" name="interest[code]"></CheckBox>
+                        <CheckBox title="做梦" name="interest[dreaming]"></CheckBox>
                     </div>
 
                     <div class="layui-form-item">
                         <label class="layui-form-label">是否婚姻：</label>
-                        <CheckBox skin="switch" text="是|否" :name="'marriage'"></CheckBox>
+                        <CheckBox skin="switch" text="是|否" name="marriage"></CheckBox>
                     </div>
 
                     <div class="layui-form-item">
@@ -116,7 +116,7 @@
 
                     <div class="layui-form-item">
                         <div class="layui-input-block">
-                            <CheckBox title="同意" skin="primary" :name="'agreement'"></CheckBox>
+                            <CheckBox title="同意" skin="primary" name="agreement"></CheckBox>
                         </div>
                     </div>
 
@@ -286,7 +286,6 @@
         mounted() {
             this.$nextTick(() => {
                 this.$layui.form.on('submit(submitTest)', (data) => {
-                    console.log(data);
                     this.$layer.msg(JSON.stringify(data.field));
                     return false;
                 });
@@ -300,6 +299,15 @@
 
             radioChange() {
                 this.$layer.msg(`选中了${this.radioValue}`);
+            },
+
+            showDoc(name, target) {
+                this.$layer.open({
+                    title: name,
+                    type: 2,
+                    area: ['100%', '100%'],
+                    content: `/static/doc/form/${target}.html`
+                });
             }
         }
     };
