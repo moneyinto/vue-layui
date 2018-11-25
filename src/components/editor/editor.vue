@@ -56,7 +56,7 @@ export default {
                 configScriptTag.id = 'configScriptTag';
                 editorScriptTag = document.createElement('script');
                 editorScriptTag.type = 'text/javascript';
-                editorScriptTag.src = this.ueditorPath + 'neditor.all.min.js';
+                editorScriptTag.src = this.ueditorPath + 'neditor.all.js';
                 editorScriptTag.id = 'editorScriptTag';
                 let s = document.getElementsByTagName('head')[0];
                 s.appendChild(configScriptTag);
@@ -99,6 +99,27 @@ export default {
                     });
                 });
             }
+        },
+        switchLang(lang) {
+            let opt = {
+                lang: lang
+            };
+
+            console.log(lang, window.UE._bak_I18N);
+
+            window.UE.utils.extend(opt, this.ueditorConfig, true);
+
+            window.UE.delEditor(this.randomId);
+
+            // 清空语言
+            if (!window.UE._bak_I18N) {
+                window.UE._bak_I18N = window.UE.I18N;
+            }
+
+            window.UE.I18N = {};
+            window.UE.I18N[opt.lang] = window.UE._bak_I18N[ opt.lang ];
+
+            window.UE.getEditor(this.randomId, opt);
         }
     }
 };

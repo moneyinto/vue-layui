@@ -31,7 +31,8 @@ const Store = new Vuex.Store({
         isLGWidth: false,
         userInfo: null,
         theme: JSON.parse(localStorage.VUE_LAYUI_ADMIN_THEME || JSON.stringify(Theme[0])),
-        menuListL: []
+        menuListL: [],
+        lang: /^zh/.test(navigator.language || navigator.browserLanguage || navigator.userLanguage) ? 'zh-cn' : 'en' // 暂只支持中文
     },
 
     actions: {

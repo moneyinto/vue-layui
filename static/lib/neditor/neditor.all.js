@@ -7395,28 +7395,39 @@ var fillCharReg = new RegExp(domUtils.fillChar, "g");
       UE.plugin.load(me);
       langReadied(me);
     } else {
-      utils.loadFile(
-        document,
-        {
-          src:
-            me.options.langPath +
-              me.options.lang +
-              "/" +
-              me.options.lang +
-              ".js",
-          tag: "script",
-          type: "text/javascript",
-          defer: "defer"
-        },
-        function() {
-          UE.plugin.load(me);
-          langReadied(me);
+        var status = 0;
+        for (var i = 0; i < me.options.langs.length; i++) {
+            utils.loadFile(
+                document,
+                {
+                  src:
+                    me.options.langPath +
+                      me.options.langs[i] +
+                      "/" +
+                      me.options.langs[i] +
+                      ".js",
+                  tag: "script",
+                  type: "text/javascript",
+                  defer: "defer"
+                },
+                function() {
+                  status ++;
+                }
+              );
         }
-      );
+        // 等待脚本加载完成
+        var timer = setInterval(function () {
+            if (status == me.options.langs.length) {
+                clearInterval(timer);
+                UE.plugin.load(me);
+                langReadied(me);
+            }
+        }, 10);
     }
 
     UE.instants["ueditorInstant" + me.uid] = me;
   });
+
   Editor.prototype = {
     registerCommand: function(name, obj) {
       this.commands[name] = obj;
@@ -8865,6 +8876,7 @@ UE.Editor.defaultOptions = function(editor) {
     enterTag: "p",
     customDomain: false,
     lang: "zh-cn",
+    langs: ["zh-cn", "en"], // 为了导入所有的语种配置
     langPath: _url + "i18n/",
     theme: "default",
     themePath: _url + "themes/",
@@ -18071,11 +18083,11 @@ UE.plugins["list"] = function() {
 
            orgFocus = me.focus;
            orgBlur = me.blur;
- 
+
            me.focus = function(){
              sourceEditor.focus();
            };
- 
+
            me.blur = function(){
              orgBlur.call(me);
              sourceEditor.blur();
