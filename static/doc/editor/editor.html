@@ -1,9 +1,8 @@
+<link href="../../layui/css/layui.css" />
+<script src="../../layui/layui.all.js"></script>
+<pre class="layui-code" lay-title="vue">
 <template>
-    <Card title="富文本" icon="layui-icon-fonts-code" @icon-click="showDoc('富文本', 'editor')">
-        <div class="layui-elem-quote">
-            <p>富文本采用百度的ueditor进行样式整改的Neditor</p>
-        </div>
-
+    <Card title="富文本">
         <div class="layui-btn-container">
             <button class="layui-btn" @click="switchLang()">切换中英文</button>
             <button class="layui-btn" @click="getAllHtml()">获取整个html的内容</button>
@@ -131,16 +130,17 @@
 
             insertHtml() {
                 this.instance.execCommand('insertHtml', '<p>插入指定html内容</p>');
-            },
-
-            showDoc(name, target) {
-                this.$layer.open({
-                    title: name,
-                    type: 2,
-                    area: ['100%', '100%'],
-                    content: `/static/doc/editor/${target}.html`
-                });
             }
         }
     };
+</script>
+</pre>
+
+<script>
+    layui.use('code', function() {
+        layui.code({
+            about: false,
+            encode: true
+        });
+    });
 </script>
