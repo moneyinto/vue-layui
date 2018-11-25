@@ -36,8 +36,9 @@ import TableInitSort from '@/pages/component/table/table-init-sort';
 import TableCellEvent from '@/pages/component/table/table-cell-event';
 import TableThead from '@/pages/component/table/table-thead';
 
+import Frame from '@/pages/component/frame/frame';
+import ImgView from '@/pages/component/imgView/imgView';
 import Icon from '@/pages/component/icon/icon';
-
 import Editor from '@/pages/component/editor/editor';
 
 const componentRouter = {
@@ -271,6 +272,20 @@ const componentRouter = {
                     component: TableThead
                 }
             ]
+        },
+
+        {
+            name: 'frame',
+            title: '弹出层',
+            path: 'frame',
+            component: Frame
+        },
+
+        {
+            name: 'imgView',
+            title: '图片预览',
+            path: 'imgView',
+            component: ImgView
         },
 
         {

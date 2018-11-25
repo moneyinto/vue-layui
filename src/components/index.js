@@ -10,6 +10,7 @@ import Panel from './panel';
 import Card from './card';
 import Form from './form';
 import Editor from './editor';
+import ImgView from './imgView';
 
 const AllCmponents = {
     Loading
@@ -25,7 +26,8 @@ const vLayUI = {
     Panel,
     Card,
     ...Form,
-    Editor
+    Editor,
+    ImgView
 };
 
 const install = (Vue, opts = {}) => {
