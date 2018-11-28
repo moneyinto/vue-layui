@@ -6,6 +6,7 @@ import Drawer from './drawer';
 import Tabs from './tabs';
 import DateTime from './dateTime';
 import Table from './table';
+import Page from './page';
 import Panel from './panel';
 import Card from './card';
 import Form from './form';
@@ -22,6 +23,7 @@ const vLayUI = {
     Drawer,
     Tabs,
     DateTime,
+    Page,
     Table,
     Panel,
     Card,

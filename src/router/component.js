@@ -36,6 +36,7 @@ import TableInitSort from '@/pages/component/table/table-init-sort';
 import TableCellEvent from '@/pages/component/table/table-cell-event';
 import TableThead from '@/pages/component/table/table-thead';
 
+import Page from '@/pages/component/page/page';
 import Frame from '@/pages/component/frame/frame';
 import ImgView from '@/pages/component/imgView/imgView';
 import Icon from '@/pages/component/icon/icon';
@@ -272,6 +273,13 @@ const componentRouter = {
                     component: TableThead
                 }
             ]
+        },
+
+        {
+            name: 'page',
+            title: '分页',
+            path: 'page',
+            component: Page
         },
 
         {
