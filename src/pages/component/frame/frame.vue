@@ -11,6 +11,27 @@
                 <button class="layui-btn layui-btn-primary" @click="showPhoto()">Photos</button>
             </div>
         </Card>
+
+        <Card title="提示信息示例">
+            <div class="layui-btn-container layadmin-layer-demo">
+                <button class="layui-btn layui-btn-primary" @click="$layer.msg('你好，体验者')">例1</button>
+                <button class="layui-btn layui-btn-primary" @click="$layer.msg('您是如何看待前端开发？', {icon: 0})">例2</button>
+                <button class="layui-btn layui-btn-primary" @click="$layer.msg('bingo', {icon: 1})">例3</button>
+                <button class="layui-btn layui-btn-primary" @click="$layer.msg('好悲催', {icon: 2})">例4</button>
+                <button class="layui-btn layui-btn-primary" @click="$layer.msg('啥情况', {icon: 3})">例5</button>
+                <button class="layui-btn layui-btn-primary" @click="$layer.msg('没办法了', {icon: 4})">例6</button>
+                <button class="layui-btn layui-btn-primary" @click="$layer.msg('不开心', {icon: 5})">例7</button>
+                <button class="layui-btn layui-btn-primary" @click="$layer.msg('开心', {icon: 6})">例8</button>
+            </div>
+        </Card>
+
+        <Card title="加载层">
+            <div class="layui-btn-container layadmin-layer-demo">
+                <button class="layui-btn layui-btn-primary" @click="loading()">风格1</button>
+                <button class="layui-btn layui-btn-primary" @click="loading(1)">风格2</button>
+                <button class="layui-btn layui-btn-primary" @click="loading(2)">风格3</button>
+            </div>
+        </Card>
     </div>
 </template>
 
@@ -34,6 +55,13 @@
                     },
                     anim: 5
                 });
+            },
+
+            loading(type) {
+                this.$layer.load(type);
+                setTimeout(() => {
+                    this.$layer.closeAll('loading');
+                }, 2000);
             }
         }
     };
