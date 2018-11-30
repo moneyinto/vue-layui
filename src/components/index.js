@@ -11,6 +11,7 @@ import Card from './card';
 import Form from './form';
 import Editor from './editor';
 import ImgView from './imgView';
+import Carousel from './carousel';
 
 const AllCmponents = {
     Loading
@@ -27,7 +28,8 @@ const vLayUI = {
     Card,
     ...Form,
     Editor,
-    ImgView
+    ImgView,
+    Carousel
 };
 
 const install = (Vue, opts = {}) => {

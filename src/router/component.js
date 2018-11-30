@@ -38,6 +38,7 @@ import TableThead from '@/pages/component/table/table-thead';
 
 import Frame from '@/pages/component/frame/frame';
 import ImgView from '@/pages/component/imgView/imgView';
+import Carousel from '@/pages/component/carousel/carousel';
 import Icon from '@/pages/component/icon/icon';
 import Editor from '@/pages/component/editor/editor';
 
@@ -286,6 +287,13 @@ const componentRouter = {
             title: '图片预览',
             path: 'imgView',
             component: ImgView
+        },
+
+        {
+            name: 'carousel',
+            title: '轮播',
+            path: 'carousel',
+            component: Carousel
         },
 
         {

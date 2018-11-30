@@ -76,10 +76,17 @@
                 // 渲染指定表单
                 form.render('checkbox', `form_${this._uid}`);
 
-                form.on(`checkbox(checkbox_${this._uid})`, (val) => {
-                    this.$emit('parent-event', val.elem.checked);
-                    this.$emit('checkbox-change', val);
-                });
+                if (this.skin === 'switch') {
+                    form.on(`switch(checkbox_${this._uid})`, (val) => {
+                        this.$emit('parent-event', val.elem.checked);
+                        this.$emit('checkbox-change', val);
+                    });
+                } else {
+                    form.on(`checkbox(checkbox_${this._uid})`, (val) => {
+                        this.$emit('parent-event', val.elem.checked);
+                        this.$emit('checkbox-change', val);
+                    });
+                }
             });
         },
 
