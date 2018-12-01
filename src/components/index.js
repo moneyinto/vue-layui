@@ -1,7 +1,7 @@
 import Loading from './loading';
 
 import Header from './header';
-import Slider from './slider';
+import Menu from './menu';
 import Drawer from './drawer';
 import Tabs from './tabs';
 import DateTime from './dateTime';
@@ -13,7 +13,8 @@ import Form from './form';
 import Editor from './editor';
 import ImgView from './imgView';
 import Carousel from './carousel';
-import ColorPicker from './colorPicker/index';
+import ColorPicker from './colorPicker';
+import Slider from './slider';
 
 const AllCmponents = {
     Loading
@@ -21,7 +22,7 @@ const AllCmponents = {
 
 const vLayUI = {
     Header,
-    Slider,
+    Menu,
     Drawer,
     Tabs,
     DateTime,
@@ -33,7 +34,8 @@ const vLayUI = {
     Editor,
     ImgView,
     Carousel,
-    ColorPicker
+    ColorPicker,
+    Slider
 };
 
 const install = (Vue, opts = {}) => {

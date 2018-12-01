@@ -37,6 +37,7 @@ import TableCellEvent from '@/pages/component/table/table-cell-event';
 import TableThead from '@/pages/component/table/table-thead';
 
 import Page from '@/pages/component/page/page';
+import Slider from '@/pages/component/slider/slider';
 import Frame from '@/pages/component/frame/frame';
 import ImgView from '@/pages/component/imgView/imgView';
 import Carousel from '@/pages/component/carousel/carousel';
@@ -282,6 +283,13 @@ const componentRouter = {
             title: '分页',
             path: 'page',
             component: Page
+        },
+
+        {
+            name: 'slider',
+            title: '滑块',
+            path: 'slider',
+            component: Slider
         },
 
         {

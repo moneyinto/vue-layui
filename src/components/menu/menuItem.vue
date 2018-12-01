@@ -5,15 +5,15 @@
                 {{item.title}}
                 <span class="layui-nav-more" v-if="item.children && item.children.length > 0"></span>
             </a>
-            <SliderItem v-if="item.children && item.children.length > 0" :menuList="item.children"></SliderItem>
+            <Menu-Item v-if="item.children && item.children.length > 0" :menuList="item.children"></Menu-Item>
         </dd>
     </dl>
 </template>
 
 <script>
-    import SliderItem from './sliderItem.vue';
+    import MenuItem from './MenuItem.vue';
     export default {
-        name: 'SliderItem',
+        name: 'MenuItem',
 
         data() {
             return {
@@ -72,7 +72,7 @@
         },
 
         components: {
-            SliderItem
+            MenuItem
         }
     };
 </script>
