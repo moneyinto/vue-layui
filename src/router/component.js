@@ -42,6 +42,7 @@ import ImgView from '@/pages/component/imgView/imgView';
 import Carousel from '@/pages/component/carousel/carousel';
 import Icon from '@/pages/component/icon/icon';
 import Editor from '@/pages/component/editor/editor';
+import ColorPicker from '@/pages/component/colorPicker/colorPicker';
 
 const componentRouter = {
     name: 'component',
@@ -302,6 +303,13 @@ const componentRouter = {
             title: '轮播',
             path: 'carousel',
             component: Carousel
+        },
+
+        {
+            name: 'colorPicker',
+            title: '颜色选择器',
+            path: 'colorPicker',
+            component: ColorPicker
         },
 
         {

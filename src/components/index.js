@@ -13,6 +13,7 @@ import Form from './form';
 import Editor from './editor';
 import ImgView from './imgView';
 import Carousel from './carousel';
+import ColorPicker from './colorPicker/index';
 
 const AllCmponents = {
     Loading
@@ -31,7 +32,8 @@ const vLayUI = {
     ...Form,
     Editor,
     ImgView,
-    Carousel
+    Carousel,
+    ColorPicker
 };
 
 const install = (Vue, opts = {}) => {
