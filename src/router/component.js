@@ -40,6 +40,7 @@ import Page from '@/pages/component/page/page';
 import Slider from '@/pages/component/slider/slider';
 import Frame from '@/pages/component/frame/frame';
 import ImgView from '@/pages/component/imgView/imgView';
+import Upload from '@/pages/component/upload/upload';
 import Carousel from '@/pages/component/carousel/carousel';
 import Icon from '@/pages/component/icon/icon';
 import Editor from '@/pages/component/editor/editor';
@@ -304,6 +305,13 @@ const componentRouter = {
             title: '图片预览',
             path: 'imgView',
             component: ImgView
+        },
+
+        {
+            name: 'upload',
+            title: '文件上传',
+            path: 'upload',
+            component: Upload
         },
 
         {
