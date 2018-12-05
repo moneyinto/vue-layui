@@ -6,9 +6,11 @@ import { router } from './router';
 import Store from './store';
 import vLayUI from './components';
 import VueCookie from 'vue-cookie';
+import VCharts from 'v-charts';
 
 Vue.use(vLayUI);
 Vue.use(VueCookie);
+Vue.use(VCharts);
 
 router.beforeEach((to, from, next) => {
     vLayUI.Loading.start();
