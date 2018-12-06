@@ -45,6 +45,7 @@ import Carousel from '@/pages/component/carousel/carousel';
 import Icon from '@/pages/component/icon/icon';
 import Editor from '@/pages/component/editor/editor';
 import ColorPicker from '@/pages/component/colorPicker/colorPicker';
+import Tree from '@/pages/component/tree/tree';
 
 const componentRouter = {
     name: 'component',
@@ -319,6 +320,13 @@ const componentRouter = {
             title: '轮播',
             path: 'carousel',
             component: Carousel
+        },
+
+        {
+            name: 'tree',
+            title: '树形结构',
+            path: 'tree',
+            component: Tree
         },
 
         {

@@ -16,6 +16,7 @@ import Carousel from './carousel';
 import ColorPicker from './colorPicker';
 import Slider from './slider';
 import Upload from './upload';
+import Tree from './tree';
 
 const AllCmponents = {
     Loading
@@ -37,7 +38,8 @@ const vLayUI = {
     Carousel,
     ColorPicker,
     Slider,
-    Upload
+    Upload,
+    Tree
 };
 
 const install = (Vue, opts = {}) => {
