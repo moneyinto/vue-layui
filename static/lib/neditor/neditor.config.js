@@ -18,7 +18,7 @@
      * 因此，UEditor提供了针对不同页面的编辑器可单独配置的根路径，具体来说，在需要实例化编辑器的页面最顶部写上如下代码即可。当然，需要令此处的URL等于对应的配置。
      * window.UEDITOR_HOME_URL = "/xxxx/xxxx/";
      */
-    var URL = window.UEDITOR_HOME_URL || getUEBasePath();
+    var URL = "/static/lib/neditor/";
 
     /**
      * 配置项主体。注意，此处所有涉及到路径的配置别遗漏URL变量。
@@ -156,10 +156,10 @@
             //主题配置项,默认是default。有需要的话也可以使用如下这样的方式来自动多主题切换，当然，前提条件是themes文件夹下存在对应的主题文件：
             //现有如下皮肤:default
             ,
-        theme: 'notadd'
-            //,themePath:URL +"themes/"
+        theme: 'notadd',
 
-            ,
+        themePath: URL +"themes/",
+
         zIndex: 1100 //编辑器层级的基数,默认是900
 
             //针对getAllHtml方法，会在对应的head标签中增加该编码设置。
