@@ -70,6 +70,10 @@
 
             search () {
                 this.render();
+            },
+
+            value () {
+                this.render();
             }
         },
 
