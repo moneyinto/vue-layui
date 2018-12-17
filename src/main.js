@@ -7,10 +7,13 @@ import Store from './store';
 import vLayUI from './components';
 import VueCookie from 'vue-cookie';
 import VCharts from 'v-charts';
+import http from './http';
 
 Vue.use(vLayUI);
 Vue.use(VueCookie);
 Vue.use(VCharts);
+
+Vue.prototype.$http = http;
 
 router.beforeEach((to, from, next) => {
     vLayUI.Loading.start();

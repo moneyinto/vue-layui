@@ -10,7 +10,7 @@
             </div>
 
             <div class="layadmin-user-form layui-icon-username layui-icon">
-                <input type="text" placeholder="用户名" class="login_txtbx" v-model="data.userName">
+                <input type="text" placeholder="用户名" class="login_txtbx" v-model="data.account">
             </div>
 
             <div class="layadmin-user-form layui-icon layui-icon-password">
@@ -30,7 +30,7 @@
         data() {
             return {
                 data: {
-                    userName: '',
+                    account: '',
                     password: ''
                 }
             };
@@ -46,10 +46,13 @@
         },
 
         methods: {
-            login() {
-                console.log(this.data.userName, this.data.password);
-                this.$cookie.set('LAYUI_TOKEN', 'token');
-                this.$router.push('/');
+            async login() {
+                let response = await this.$http.post('/user/login', this.data);
+                if (response.success) {
+                    this.$cookie.set('LAYUI_TOKEN', response.data.token);
+                    this.$store.commit('updateUserInfo', response.data.user);
+                    this.$router.push('/');
+                }
             }
         }
     };
