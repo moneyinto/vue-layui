@@ -26,7 +26,7 @@
         },
 
         mounted() {
-            this.$store.commit('updateUserInfo', { name: 'moneyinto' });
+            this.$store.commit('updateUserInfo', localStorage.VUE_LAYUI_ADMIN_USERINFO ? JSON.parse(localStorage.VUE_LAYUI_ADMIN_USERINFO) : { name: 'moneyinto' });
 
             this.$store.state.isSMWidth = window.innerWidth <= 992;
             this.$store.state.isLGWidth = window.innerWidth > 992;

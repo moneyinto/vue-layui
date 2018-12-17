@@ -52,7 +52,7 @@
                         <a lay-href="set/user/password">修改密码</a>
                     </dd>
                     <hr>
-                    <dd layadmin-event="logout" style="text-align: center;">
+                    <dd @click="loginOut()" style="text-align: center;">
                         <a>退出</a>
                     </dd>
                 </dl>
@@ -69,6 +69,11 @@ export default {
     methods: {
         openDrawer() {
             Bus.$emit('openDrawer');
+        },
+
+        loginOut() {
+            this.$cookie.delete('LAYUI_TOKEN');
+            this.$router.replace('/login');
         }
     }
 };
