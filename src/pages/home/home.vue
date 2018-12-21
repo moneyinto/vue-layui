@@ -283,7 +283,7 @@ export default {
     },
 
     mounted() {
-
+        this.$http.get('/user/getRoleList');
     },
 
     methods: {

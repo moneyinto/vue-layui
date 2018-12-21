@@ -18,6 +18,7 @@ const dealRouterToMenuList = (routes) => {
         if (item.children && item.children.length > 0) {
             obj.children = dealRouterToMenuList(item.children);
         }
+
         menuList.push(obj);
     }
     return menuList;
@@ -31,12 +32,9 @@ const Store = new Vuex.Store({
         isLGWidth: false,
         userInfo: null,
         theme: JSON.parse(localStorage.VUE_LAYUI_ADMIN_THEME || JSON.stringify(Theme[0])),
-        menuListL: [],
+        menuList: [],
+        pageAccess: [],
         lang: /^zh/.test(navigator.language || navigator.browserLanguage || navigator.userLanguage) ? 'zh-cn' : 'en' // 暂只支持中文
-    },
-
-    actions: {
-
     },
 
     mutations: {
@@ -92,6 +90,16 @@ const Store = new Vuex.Store({
         updateMenuList(state) {
             let menuList = dealRouterToMenuList(appRouter);
             state.menuList = menuList;
+        },
+
+        updateAccess(state, access) {
+            state.pageAccess = ['home', '404', ...access.filter(item => { return item.type === 2; }).map(item => { return item.name; })];
+        }
+    },
+
+    actions: {
+        sysAccess(commit) {
+            return Vue.prototype.$http.get('/user/getPower');
         }
     }
 });

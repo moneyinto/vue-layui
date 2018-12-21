@@ -8,6 +8,7 @@ import vLayUI from './components';
 import VueCookie from 'vue-cookie';
 import VCharts from 'v-charts';
 import http from './http';
+import Util from './libs/util';
 
 Vue.use(vLayUI);
 Vue.use(VueCookie);
@@ -20,7 +21,18 @@ router.beforeEach((to, from, next) => {
     // Util.title(to.meta.title);
     let token = VueCookie.get('LAYUI_TOKEN');
     if (token) {
-        next();
+        if (to.name !== 'login') { // 正常情况
+            if (Store.state.pageAccess.length === 0) {
+                Store.dispatch('sysAccess').then((res) => { // 同步用户权限
+                    Store.commit('updateAccess', res.data);
+                    Util.verifyAccess(Store.state.pageAccess, to.name, router, next);
+                });
+            } else {
+                Util.verifyAccess(Store.state.pageAccess, to.name, router, next);
+            }
+        } else {
+            next();
+        }
     } else {
         if (to.name === 'login' || to.name === '404') {
             next();

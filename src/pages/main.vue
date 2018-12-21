@@ -2,7 +2,7 @@
     <div class="layadmin-tabspage-none" :class="$store.state.isSMWidth ? ($store.state.isCloseSlider ? '': 'layadmin-side-spread-sm') : ($store.state.isCloseSlider ? '': 'layadmin-side-shrink')">
         <div class="layui-layout layui-layout-admin">
             <Header></Header>
-            <Menu :menuList="$store.state.menuList"></Menu>
+            <Menu :menuList="$store.state.menuList" :access="$store.state.pageAccess"></Menu>
             <Drawer></Drawer>
             <div class="layadmin-body-shade" @click="$store.commit('toggleSlider')"></div>
             <div class="layui-body" id="LAY_app_body">

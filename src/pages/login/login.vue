@@ -52,6 +52,8 @@
                     this.$cookie.set('LAYUI_TOKEN', response.data.token);
                     this.$store.commit('updateUserInfo', response.data.user);
                     this.$router.push('/');
+                } else {
+                    this.$layer.msg(response.msg);
                 }
             }
         }

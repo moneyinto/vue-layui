@@ -34,6 +34,7 @@ module.exports = {
         "no-tabs": "off",
         "no-new": "off",
         "no-extend-native": 0,
-        "no-useless-escape": 0
+        "no-useless-escape": 0,
+        "quotes": 0
     }
 }
