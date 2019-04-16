@@ -4,7 +4,7 @@
             <a href="javascript:;" @click="$router.push('/')">主页</a>
             <span v-for="(item, index) in tabs" :key="index">
                 <span lay-separator>/</span>
-                  <a><cite>{{item}}</cite></a>
+                <cite>{{item}}</cite>
             </span>
         </div>
     </div>
@@ -25,6 +25,8 @@
             this.dealMenuList(this.$store.state.menuList);
 
             this.dealTabs();
+
+            console.log(this.tabs);
         },
 
         watch: {
@@ -59,3 +61,10 @@
         }
     };
 </script>
+
+<style scoped>
+    cite {
+       font-style: normal !important;
+    }
+</style>
+
