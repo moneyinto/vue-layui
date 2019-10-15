@@ -1,8 +1,8 @@
 <template>
     <div class="layui-form" :lay-filter="'form_' + _uid">
-        <select :lay-filter="'select_' + _uid" :lay-search="search" :value="value" :name="name">
+        <select :lay-filter="'select_' + _uid" :lay-search="search" :name="name">
             <option value="">{{placeholder}}</option>
-            <option v-if="!group" :value="item.value" v-for="(item, index) in source" :key="index" :disabled="item.disabled">{{item.name}}</option>
+            <option v-if="!group" :value="item.value" v-for="(item, index) in source" :key="index" :disabled="item.disabled" :selected="value && item.value == value">{{item.name}}</option>
 
             <optgroup v-if="group" :label="item.label" v-for="(item, index) in source" :key="index">
                 <option :value="child.value" v-for="(child, i) in item.list" :key="i" :disabled="child.disabled">{{child.name}}</option>
