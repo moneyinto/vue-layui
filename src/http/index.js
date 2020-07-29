@@ -1,11 +1,12 @@
 import axios from 'axios';
 import Vue from 'vue';
 import { router } from '../router';
+import config from './config';
 
-const baseUrl = '/api';
+export const baseUrl = '/api';
 
-const _get = url => {
-    url = baseUrl + url;
+const _get = key => {
+    const url = baseUrl + config[key];
     return new Promise((resolve, reject) => {
         axios.get(url)
         .then(response => {
@@ -17,8 +18,8 @@ const _get = url => {
     });
 };
 
-const _post = async (url, data) => {
-    url = baseUrl + url;
+const _post = async (key, data) => {
+    const url = baseUrl + config[key];
     return new Promise((resolve, reject) => {
         axios.post(url, data)
         .then(response => {

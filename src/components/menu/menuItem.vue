@@ -3,6 +3,7 @@
         <dd
             v-for="(item, index) in menuList"
             :key="index"
+            class="layui-nav-item"
             :class="{'layui-nav-itemed': menuOpenIndex === index}"
             v-if="isAccess(item.name)"
         >

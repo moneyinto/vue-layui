@@ -35,6 +35,7 @@ module.exports = {
         "no-new": "off",
         "no-extend-native": 0,
         "no-useless-escape": 0,
-        "quotes": 0
+        "quotes": 0,
+        "eol-last": 0
     }
 }

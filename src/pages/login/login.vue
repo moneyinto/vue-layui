@@ -47,7 +47,7 @@
 
         methods: {
             async login() {
-                let response = await this.$http.post('/user/login', this.data);
+                let response = await this.$http.post('login', this.data);
                 if (response.success) {
                     this.$cookie.set('LAYUI_TOKEN', response.data.token);
                     this.$store.commit('updateUserInfo', response.data.user);

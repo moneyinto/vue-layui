@@ -9,6 +9,8 @@
 
 <script>
     let self = null;
+    import config from '@/http/config';
+    import { baseUrl } from '@/http';
     export default {
         props: {
             options: {
@@ -25,75 +27,91 @@
             };
         },
 
+        watch: {
+            options() {
+                this.render();
+            }
+        },
+
         mounted() {
-            self = this;
-            this.$nextTick(() => {
-                this.$layui.use('table', () => {
-                    const table = this.$layui.table;
-                    const form = this.$layui.form;
-                    let options = {
-                        elem: this.$refs.table
-                    };
+            this.render();
+        },
 
-                    // 处理表格header中dom按钮
-                    if (this.options.toolbarDom) this.options.toolbar = this.$refs.tableHtml.querySelector(`[mref='${this.options.toolbarDom}']`);
+        methods: {
+            render() {
+                self = this;
+                this.$nextTick(() => {
+                    this.$layui.use('table', () => {
+                        const table = this.$layui.table;
+                        const form = this.$layui.form;
+                        let options = {
+                            elem: this.$refs.table
+                        };
 
-                    // 处理表格中的dom按钮
-                    if (this.options.cols.length > 0) {
-                        for (let col of this.options.cols[0]) {
-                            if (col.toolbarDom) col.toolbar = this.$refs.tableHtml.querySelector(`[mref='${col.toolbarDom}']`);
+                        if (this.options.urlKey) {
+                            this.options.url = baseUrl + config[this.options.urlKey];
                         }
-                    }
 
-                    table.render({...this.options, ...options});
+                        // 处理表格header中dom按钮
+                        if (this.options.toolbarDom) options.toolbar = `[mref='${this.options.toolbarDom}']`;
 
-                    this.isShow = false;
+                        // 处理表格中的dom按钮
+                        if (this.options.cols.length > 0) {
+                            for (let col of this.options.cols[0]) {
+                                if (col.toolbarDom) col.toolbar = this.$refs.tableHtml.querySelector(`[mref='${col.toolbarDom}']`);
+                            }
+                        }
 
-                    // 头工具栏事件
-                    table.on('toolbar', (obj) => {
-                        this.$emit('table-toolbar-event', obj);
-                    });
+                        table.render({...this.options, ...options});
 
-                    // 监听行工具事件
-                    table.on('tool', (obj) => {
-                        this.$emit('table-bar-event', obj);
-                    });
+                        // this.isShow = false;
 
-                    // 监听单元格编辑
-                    table.on('edit', (obj) => {
-                        this.$emit('table-cell-edit-event', obj);
-                    });
+                        // 头工具栏事件
+                        table.on('toolbar', (obj) => {
+                            this.$emit('table-toolbar-event', obj);
+                        });
 
-                    // 监听表格复选框选择
-                    table.on('checkbox', (obj) => {
-                        this.$emit('table-checkbox-event', obj);
-                    });
+                        // 监听行工具事件
+                        table.on('tool', (obj) => {
+                            this.$emit('table-bar-event', obj);
+                        });
 
-                    // 监听行单击事件
-                    table.on('row', (obj) => {
-                        this.$emit('table-row-event', obj);
-                    });
+                        // 监听单元格编辑
+                        table.on('edit', (obj) => {
+                            this.$emit('table-cell-edit-event', obj);
+                        });
 
-                    // 监听行双击事件
-                    table.on('rowDouble', (obj) => {
-                        this.$emit('table-row-double-event', obj);
-                    });
+                        // 监听表格复选框选择
+                        table.on('checkbox', (obj) => {
+                            this.$emit('table-checkbox-event', obj);
+                        });
 
-                    // 监听排序事件
-                    table.on('sort', (obj) => {
-                        this.$emit('table-sort-event', obj);
-                    });
+                        // 监听行单击事件
+                        table.on('row', (obj) => {
+                            this.$emit('table-row-event', obj);
+                        });
 
-                    // 监听表单事件
-                    form.on('switch', function(obj) {
-                        self.$emit('table-form-switch-event', this, obj);
-                    });
+                        // 监听行双击事件
+                        table.on('rowDouble', (obj) => {
+                            this.$emit('table-row-double-event', obj);
+                        });
 
-                    form.on('checkbox', function(obj) {
-                        self.$emit('table-form-checkbox-event', this, obj);
+                        // 监听排序事件
+                        table.on('sort', (obj) => {
+                            this.$emit('table-sort-event', obj);
+                        });
+
+                        // 监听表单事件
+                        form.on('switch', function(obj) {
+                            self.$emit('table-form-switch-event', this, obj);
+                        });
+
+                        form.on('checkbox', function(obj) {
+                            self.$emit('table-form-checkbox-event', this, obj);
+                        });
                     });
                 });
-            });
+            }
         }
     };
 </script>

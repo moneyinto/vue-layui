@@ -2,10 +2,10 @@
     <div class="layui-form" :lay-filter="'form_' + _uid">
         <select :lay-filter="'select_' + _uid" :lay-search="search" :value="value" :name="name">
             <option value="">{{placeholder}}</option>
-            <option v-if="!group" :value="item.value" v-for="(item, index) in source" :key="index" :disabled="item.disabled">{{item.name}}</option>
+            <option v-if="!group" :value="item[keyValue]" v-for="(item, index) in source" :key="index" :disabled="item.disabled">{{item.name}}</option>
 
             <optgroup v-if="group" :label="item.label" v-for="(item, index) in source" :key="index">
-                <option :value="child.value" v-for="(child, i) in item.list" :key="i" :disabled="child.disabled">{{child.name}}</option>
+                <option :value="child[keyValue]" v-for="(child, i) in item.list" :key="i" :disabled="child.disabled">{{child.name}}</option>
             </optgroup>
         </select>
     </div>
@@ -18,6 +18,16 @@
             source: {
                 type: Array,
                 default: () => ([])
+            },
+
+            keyValue: {
+                type: String,
+                default: 'value'
+            },
+
+            keyName: {
+                type: String,
+                default: 'name'
             },
 
             name: {
@@ -84,6 +94,7 @@
                 form.render('select', `form_${this._uid}`);
 
                 form.on(`select(select_${this._uid})`, (val) => {
+                    console.log(val);
                     this.$emit('parent-event', val.value);
                     this.$emit('select-change', val);
                 });

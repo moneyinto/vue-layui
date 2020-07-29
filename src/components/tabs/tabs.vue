@@ -25,8 +25,6 @@
             this.dealMenuList(this.$store.state.menuList);
 
             this.dealTabs();
-
-            console.log(this.tabs);
         },
 
         watch: {

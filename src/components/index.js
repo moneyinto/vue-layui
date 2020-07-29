@@ -17,6 +17,7 @@ import ColorPicker from './colorPicker';
 import Slider from './slider';
 import Upload from './upload';
 import Tree from './tree';
+import Modal from './modal';
 
 const AllCmponents = {
     Loading
@@ -39,7 +40,8 @@ const vLayUI = {
     ColorPicker,
     Slider,
     Upload,
-    Tree
+    Tree,
+    Modal
 };
 
 const install = (Vue, opts = {}) => {

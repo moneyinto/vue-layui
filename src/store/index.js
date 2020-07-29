@@ -30,11 +30,14 @@ const Store = new Vuex.Store({
         isFullScreen: false,
         isSMWidth: false,
         isLGWidth: false,
+        isShowComponent: true, // 是否展示开发组件
         userInfo: null,
         theme: JSON.parse(localStorage.VUE_LAYUI_ADMIN_THEME || JSON.stringify(Theme[0])),
         menuList: [],
         pageAccess: [],
-        lang: /^zh/.test(navigator.language || navigator.browserLanguage || navigator.userLanguage) ? 'zh-cn' : 'en' // 暂只支持中文
+        access: [],
+        lang: /^zh/.test(navigator.language || navigator.browserLanguage || navigator.userLanguage) ? 'zh-cn' : 'en', // 暂只支持中文
+        roleList: []
     },
 
     mutations: {
@@ -93,13 +96,28 @@ const Store = new Vuex.Store({
         },
 
         updateAccess(state, access) {
-            state.pageAccess = ['home', '404', ...access.filter(item => { return item.type === 2; }).map(item => { return item.name; })];
+            state.access = access;
+            let baseAccess = ['home', '404'];
+            if (state.isShowComponent) baseAccess = [...baseAccess, 'component', 'grid', 'button', 'form', 'panel', 'dateTime', 'table', 'page', 'slider', 'frame', 'imgView', 'upload', 'carousel', 'tree', 'colorPicker', 'icon', 'editor', 'gridList', 'gridMobile', 'element', 'dateTimeDemo', 'tableSimple', 'tableAuto', 'tableData', 'tablePage', 'tableResetPage', 'tableToolbar', 'tableTotalRow', 'tableHeight', 'tableCheckbox', 'tableRadio', 'tableCellEdit', 'tableForm', 'tableStyle', 'tableFixed', 'tableOperate', 'tableParseData', 'tableOnRow', 'tableReload', 'tableInitSort', 'tableCellEvent', 'tableThead'];
+            state.pageAccess = [...baseAccess, ...access.filter(item => { return item.type === 2; }).map(item => { return item.key; })];
+        },
+
+        updateRoleList(state, roleList) {
+            state.roleList = roleList;
         }
     },
 
     actions: {
-        sysAccess(commit) {
-            return Vue.prototype.$http.get('/user/getPower');
+        sysAccess(context) {
+            return Vue.prototype.$http.get('getUserPermission');
+        },
+        sysRoleList(context) {
+            return new Promise((resolve, reject) => {
+                Vue.prototype.$http.get('getRoleList').then(res => {
+                    context.commit('updateRoleList', res.data);
+                    resolve(res.data);
+                });
+            });
         }
     }
 });

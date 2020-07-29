@@ -5,6 +5,11 @@ import Home from '@/pages/home/home';
 import Login from '@/pages/login/login';
 import Error404 from '@/pages/error/404';
 
+import SysSetting from '@/pages/sysSetting';
+import SysRole from '@/pages/sysSetting/role';
+import SysPermission from '@/pages/sysSetting/permission';
+import SysUser from '@/pages/sysSetting/user';
+
 import componentRouter from './component';
 
 Vue.use(Router);
@@ -33,6 +38,33 @@ export const appRouter = [
         icon: 'layui-icon-home',
         path: '/home',
         component: Home
+    },
+    {
+        name: 'sysSetting',
+        title: '系统设置',
+        icon: 'layui-icon-set',
+        path: '/sysSetting',
+        component: SysSetting,
+        children: [
+            {
+                name: 'sysRole',
+                title: '角色管理',
+                path: '/sysRole',
+                component: SysRole
+            },
+            {
+                name: 'sysPermission',
+                title: '权限管理',
+                path: '/sysPermission',
+                component: SysPermission
+            },
+            {
+                name: 'sysUser',
+                title: '系统用户',
+                path: '/sysUser',
+                component: SysUser
+            }
+        ]
     },
     componentRouter
 ];

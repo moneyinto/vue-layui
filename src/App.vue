@@ -10,3 +10,8 @@
     };
 </script>
 
+<style>
+    .table-title {
+        margin-bottom: 10px;
+    } 
+</style>
