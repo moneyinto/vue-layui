@@ -7,16 +7,16 @@
             <button class="layui-btn" @click="search()">搜索</button>
         </div>
         <Table :options="options" @table-toolbar-event="toolbarEvent" @table-bar-event="barEvent">
-            <div mref="toolbar">
+            <div slot="toolbar">
                 <div class="layui-btn-container">
-                    <button class="layui-btn layui-btn-sm" lay-event="add">新增权限</button>
-                    <button class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">删除</button>
+                    <button class="layui-btn" lay-event="add">新增权限</button>
+                    <button class="layui-btn layui-btn-danger" lay-event="del">删除</button>
                 </div>
             </div>
 
-            <div mref="bar">
-                <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
-                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+            <div slot="bar">
+                <a class="layui-btn layui-btn-sm" lay-event="edit">编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">删除</a>
             </div>
         </Table>
 
@@ -152,13 +152,14 @@
             getAllPermission() {
                 this.$http.get('getAllPermission').then(res => {
                     this.permissionList = res.data;
+                    console.log(this.permissionList);
                     this.search();
                 });
             },
 
             search() {
                 let data = this.permissionList;
-                if (this.filterType !== '') data = this.options.data.filter(item => { return item.type === Number(this.filterType); });
+                if (this.filterType !== '') data = data.filter(item => { return item.type === Number(this.filterType); });
                 this.options = {
                     ...this.options,
                     data: data

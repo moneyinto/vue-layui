@@ -66,6 +66,12 @@ export const appRouter = [
             }
         ]
     },
+    {
+        name: 'productList',
+        title: '商品列表',
+        path: '/productList',
+        component: () => import('@/pages/productList')
+    },
     componentRouter
 ];
 

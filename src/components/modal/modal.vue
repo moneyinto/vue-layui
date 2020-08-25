@@ -11,7 +11,7 @@
             <div class="layui-modal-body">
                 <slot></slot>
             </div>
-            <div class="layui-modal-footer">
+            <div class="layui-modal-footer" v-if="showFooter">
                 <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" @click="close()"><span>取 消</span></button>
                 <button type="button" class="layui-btn layui-btn-sm" @click="ok()"><span>确 定</span></button>
             </div>
@@ -37,6 +37,10 @@ export default {
         title: {
             type: String,
             default: ""
+        },
+        showFooter: {
+            type: Boolean,
+            default: false
         }
     },
 

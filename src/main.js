@@ -10,6 +10,8 @@ import VCharts from 'v-charts';
 import http from './http';
 import Util from './libs/util';
 
+import './base.css';
+
 Vue.use(vLayUI);
 Vue.use(VueCookie);
 Vue.use(VCharts);

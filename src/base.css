@@ -1,0 +1,28 @@
+.layui-left {
+    float: left;
+}
+
+.layui-right {
+    float: right;
+}
+
+/* 外边距 */
+.layui-offset-top5 {
+    margin-top: 5px;
+}
+
+.layui-offset-top10 {
+    margin-top: 10px;
+}
+
+.layui-offset-top15 {
+    margin-top: 15px;
+}
+
+.layui-offset-top20 {
+    margin-top: 20px;
+}
+
+.layui-offset-top30 {
+    margin-top: 30px;
+}

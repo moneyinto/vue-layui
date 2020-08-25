@@ -32,14 +32,14 @@
             </form>
         </div>
         <Table :options="options" @table-toolbar-event="toolbarEvent" @table-bar-event="barEvent">
-            <div mref="toolbar">
+            <div slot="toolbar">
                 <div class="layui-btn-container">
                     <button class="layui-btn layui-btn-sm" lay-event="add">新增用户</button>
                     <button class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">删除</button>
                 </div>
             </div>
 
-            <div mref="bar">
+            <div slot="bar">
                 <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
                 <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
             </div>
