@@ -47,6 +47,7 @@
 
         methods: {
             async login() {
+                if (!this.data.account || !this.data.password) return this.$layer.msg('请输入用户名和密码');
                 let response = await this.$http.post('login', this.data);
                 if (response.success) {
                     this.$cookie.set('LAYUI_TOKEN', response.data.token);
