@@ -16,6 +16,7 @@ Vue.use(vLayUI);
 Vue.use(VueCookie);
 Vue.use(VCharts);
 
+Vue._watchers = Vue.prototype._watchers = []; // 处理 v-charts 官方 bug
 Vue.prototype.$http = http;
 
 router.beforeEach((to, from, next) => {
